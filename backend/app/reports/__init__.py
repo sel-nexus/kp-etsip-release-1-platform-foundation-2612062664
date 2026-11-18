@@ -1,0 +1,1 @@
+"""Scoped inventory reporting."""

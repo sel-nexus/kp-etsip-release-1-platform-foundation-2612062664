@@ -11,6 +11,7 @@ import ApplicationForm from './applications/ApplicationForm';
 import DashboardPage from './dashboard/DashboardPage';
 import AdminPage from './admin/AdminPage';
 import AuditPage from './admin/AuditPage';
+import ReportsPage from './reports/ReportsPage';
 
 /** Restrict routes to a live session and the initial password change. */
 function Protected() {
@@ -27,6 +28,7 @@ function Protected() {
           {!user.mustChangePassword && <Link to="/dashboard">Dashboard</Link>}
           {!user.mustChangePassword && <Link to="/portfolios">Portfolios</Link>}
           {!user.mustChangePassword && <Link to="/applications">Applications</Link>}
+          {!user.mustChangePassword && <Link to="/reports">Reports</Link>}
           {!user.mustChangePassword && user.role === 'Administrator' && <Link to="/admin">Administration</Link>}
           {!user.mustChangePassword && ['Administrator', 'Auditor'].includes(user.role) && <Link to="/audit">Audit log</Link>}
           <Link to="/profile">My profile</Link>
@@ -42,6 +44,7 @@ function Protected() {
         <Route path="/portfolios/:id" element={<PortfolioDetail />} />
         <Route path="/portfolios/:id/edit" element={<PortfolioForm />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/reports" element={<ReportsPage />} />
         <Route path="/applications" element={<ApplicationList />} />
         <Route path="/applications/new" element={<ApplicationForm />} />
         <Route path="/applications/:id" element={<ApplicationDetail />} />

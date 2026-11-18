@@ -19,6 +19,746 @@
       "community": 16
     },
     {
+      "id": "backend_app_admin_init",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "backend/app/admin/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_init_rationale_1",
+      "label": "User and role administration.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository",
+      "label": "repository.py",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository",
+      "label": "AdminRepository",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_py_asyncdatabase",
+      "label": "AsyncDatabase",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_permissions",
+      "label": ".permissions()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_get",
+      "label": ".get()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_py_objectid",
+      "label": "ObjectId",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_page",
+      "label": ".page()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_insert",
+      "label": ".insert()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L29",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_update",
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_valid_portfolios",
+      "label": ".valid_portfolios()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L39",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_active_admin_count",
+      "label": ".active_admin_count()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L45",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_adminrepository_audit",
+      "label": ".audit()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L49",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_1",
+      "label": "Persist administration changes and query the audit history.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_9",
+      "label": "Access the shared collections for administration.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_11",
+      "label": "Bind the shared database.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_15",
+      "label": "Read the role's current permission set.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_20",
+      "label": "Find a document by identifier.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_24",
+      "label": "Read a bounded page and its total.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_30",
+      "label": "Insert a timestamped document.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_35",
+      "label": "Persist fields on an existing document.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_40",
+      "label": "Ensure each assigned portfolio exists.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_46",
+      "label": "Count active administrator accounts.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_repository_rationale_50",
+      "label": "Persist a credential-free event for a successful operation.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L50",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router",
+      "label": "router.py",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_assignment_portfolios",
+      "label": "assignment_portfolios()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_db",
+      "label": "Db",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_user",
+      "label": "User",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_users",
+      "label": "users()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_post",
+      "label": "post",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_create_user",
+      "label": "create_user()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_get_user",
+      "label": "get_user()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L42",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_put",
+      "label": "put",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_update_user",
+      "label": "update_user()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L50",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_delete",
+      "label": "delete",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_delete_user",
+      "label": "delete_user()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L56",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_py_response",
+      "label": "Response",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_roles",
+      "label": "roles()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L63",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_create_role",
+      "label": "create_role()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L72",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_update_role",
+      "label": "update_role()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L78",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_1",
+      "label": "Expose administrator-only user and role endpoints.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_19",
+      "label": "List portfolio identifiers and names for access assignment.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_28",
+      "label": "List accounts for administrators.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_37",
+      "label": "Create a local account.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_43",
+      "label": "Read one public account.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_51",
+      "label": "Update a local account.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_57",
+      "label": "Deactivate rather than remove an account.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L57",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_64",
+      "label": "List supported roles for administrators.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L64",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_73",
+      "label": "Create a missing supported role.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L73",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_router_rationale_79",
+      "label": "Update a role's description and permissions.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L79",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas",
+      "label": "schemas.py",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_userinput",
+      "label": "UserInput",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_py_basemodel",
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_py_field_validator",
+      "label": "field_validator",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_userinput_name_valid",
+      "label": ".name_valid()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_userinput_email_valid",
+      "label": ".email_valid()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_userinput_password_bytes",
+      "label": ".password_bytes()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L43",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_roleinput",
+      "label": "RoleInput",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L50",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_roleinput_unique_permissions",
+      "label": ".unique_permissions()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L59",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_1",
+      "label": "Validate administration requests and constrain role vocabulary.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_12",
+      "label": "Describe editable local account fields.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_26",
+      "label": "Require a nonblank display name.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_35",
+      "label": "Normalize and validate local email addresses.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_44",
+      "label": "Enforce bcrypt's byte limit.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_51",
+      "label": "Describe one of the supported roles and its permissions.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_schemas_rationale_60",
+      "label": "Reject duplicate permission entries.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L60",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service",
+      "label": "service.py",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_ident",
+      "label": "ident()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L13",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_py_objectid",
+      "label": "ObjectId",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_authorize",
+      "label": "authorize()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_present_user",
+      "label": "present_user()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L26",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_present_role",
+      "label": "present_role()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L31",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_get_doc",
+      "label": "get_doc()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L36",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_save_user",
+      "label": "save_user()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L44",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_deactivate",
+      "label": "deactivate()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L77",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_save_role",
+      "label": "save_role()",
+      "file_type": "code",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L87",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_1",
+      "label": "Apply administrator authorization and account management rules.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_14",
+      "label": "Reject malformed or missing identifiers as not found.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_21",
+      "label": "Intersect live permissions with fixed role restrictions.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_27",
+      "label": "Return account fields without credential material.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_32",
+      "label": "Return the public role representation.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_37",
+      "label": "Find a document or return a not-found response.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_45",
+      "label": "Create or update an account and audit its changes.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L45",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_78",
+      "label": "Deactivate an account while retaining historical references.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L78",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_admin_service_rationale_88",
+      "label": "Create or update a supported role without changing its identity.",
+      "file_type": "rationale",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L88",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_applications_init",
       "label": "__init__.py",
       "file_type": "code",
@@ -742,6 +1482,113 @@
       "source_location": "L13",
       "_origin": "ast",
       "community": 0
+    },
+    {
+      "id": "backend_app_audit_router",
+      "label": "router.py",
+      "file_type": "code",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_present",
+      "label": "present()",
+      "file_type": "code",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L20",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_safe_csv",
+      "label": "safe_csv()",
+      "file_type": "code",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_py_get",
+      "label": "get",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_listing",
+      "label": "listing()",
+      "file_type": "code",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_py_db",
+      "label": "Db",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_py_user",
+      "label": "User",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "datetime",
+      "label": "datetime",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_py_response",
+      "label": "Response",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_rationale_1",
+      "label": "Expose a read-only, permission-gated audit history and CSV export.",
+      "file_type": "rationale",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_rationale_21",
+      "label": "Convert database identifiers to public strings.",
+      "file_type": "rationale",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_rationale_29",
+      "label": "Prevent spreadsheet formulas in text cells.",
+      "file_type": "rationale",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_audit_router_rationale_36",
+      "label": "Return a filtered page or export the same bounded page as CSV.",
+      "file_type": "rationale",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L36",
+      "_origin": "ast"
     },
     {
       "id": "backend_app_audit_service",
@@ -1988,7 +2835,7 @@
       "label": "create_app()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -2007,7 +2854,7 @@
       "label": "lifespan()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -2017,7 +2864,7 @@
       "label": "health()",
       "file_type": "code",
       "source_file": "backend/app/main.py",
-      "source_location": "L49",
+      "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
       "community": 1
@@ -2032,11 +2879,11 @@
       "community": 1
     },
     {
-      "id": "backend_app_main_rationale_18",
+      "id": "backend_app_main_rationale_20",
       "label": "Build an application with an isolated lifecycle and explicit settings.",
       "file_type": "rationale",
       "source_file": "backend/app/main.py",
-      "source_location": "L18",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -2707,6 +3554,150 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_admin",
+      "label": "test_admin.py",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_py_fixture",
+      "label": "fixture",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_client",
+      "label": "client()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L12",
+      "_py_fixture": "?",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_login",
+      "label": "login()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_admin",
+      "label": "admin()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L32",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_test_guards_and_live_permissions",
+      "label": "test_guards_and_live_permissions()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L40",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_test_user_crud_conflicts_and_deactivation",
+      "label": "test_user_crud_conflicts_and_deactivation()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L55",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_test_role_edits_are_live_and_last_admin_protected",
+      "label": "test_role_edits_are_live_and_last_admin_protected()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L80",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_test_audit_filters_export_and_formula_safety",
+      "label": "test_audit_filters_export_and_formula_safety()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L106",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_1",
+      "label": "Exercise administration and audit endpoints with a real disposable MongoDB.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_13",
+      "label": "Create and remove an isolated database for each test.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_26",
+      "label": "Return a bearer header from a real login.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_33",
+      "label": "Complete the seeded administrator's initial password change.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_41",
+      "label": "Enforce first-login guard and fixed administrator and auditor roles.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_56",
+      "label": "Persist normalized accounts, reject conflicts and retain audit history.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L56",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_81",
+      "label": "Enforce role vocabulary and prevent ordinary last-admin lockout.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L81",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_admin_rationale_107",
+      "label": "Filter bounded audit pages and protect CSV consumers from formulas.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L107",
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_applications",
       "label": "test_applications.py",
       "file_type": "code",
@@ -3354,6 +4345,14 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_e2e_admin_spec",
+      "label": "admin.spec.ts",
+      "file_type": "code",
+      "source_file": "frontend/e2e/admin.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_applications_spec",
       "label": "applications.spec.ts",
       "file_type": "code",
@@ -3846,6 +4845,242 @@
       "community": 19
     },
     {
+      "id": "frontend_src_admin_admin_test",
+      "label": "admin.test.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_admin_test_admin",
+      "label": "admin",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_admin_test_roles",
+      "label": "roles",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_admin_test_reply",
+      "label": "reply()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L9",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage",
+      "label": "AdminPage.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_account",
+      "label": "Account",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L7",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_role",
+      "label": "Role",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L8",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_page",
+      "label": "Page",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L9",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_form",
+      "label": "Form",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L10",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_empty",
+      "label": "empty",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_permissions",
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_adminpage",
+      "label": "AdminPage()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_adminpage_load",
+      "label": "load()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L31",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_adminpage_edit",
+      "label": "edit()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L44",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_adminpage_save",
+      "label": "save()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L49",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "preventDefault",
+            "receiver_type": "FormEvent",
+            "lang": "typescript",
+            "line": "L50"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_adminpage_deactivate",
+      "label": "deactivate()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L56",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_adminpage_adminpage_saverole",
+      "label": "saveRole()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L61",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "preventDefault",
+            "receiver_type": "FormEvent",
+            "lang": "typescript",
+            "line": "L62"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_auditpage",
+      "label": "AuditPage.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_auditpage_event",
+      "label": "Event",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_auditpage_page",
+      "label": "Page",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L7",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_auditpage_auditpage",
+      "label": "AuditPage()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_auditpage_auditpage_apply",
+      "label": "apply()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L28",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "preventDefault",
+            "receiver_type": "FormEvent",
+            "lang": "typescript",
+            "line": "L29"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_admin_auditpage_auditpage_download",
+      "label": "download()",
+      "file_type": "code",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_api",
       "label": "api.ts",
       "file_type": "code",
@@ -3878,7 +5113,7 @@
       "label": "Protected()",
       "file_type": "code",
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "_callable": true,
       "_origin": "ast",
       "community": 3
@@ -3888,7 +5123,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L50",
+      "source_location": "L56",
       "_callable": true,
       "_origin": "ast",
       "community": 3
@@ -4836,12 +6071,1523 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_admin_init_rationale_1",
+      "target": "backend_app_admin_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository_init",
+      "target": "backend_app_admin_repository_py_asyncdatabase",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_permissions",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_get",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository_get",
+      "target": "backend_app_admin_repository_py_objectid",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_page",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_insert",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository_insert",
+      "target": "backend_app_admin_repository_py_objectid",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_update",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository_update",
+      "target": "backend_app_admin_repository_py_objectid",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_valid_portfolios",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_active_admin_count",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository",
+      "target": "backend_app_admin_repository_adminrepository_audit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_adminrepository_audit",
+      "target": "backend_app_admin_repository_py_objectid",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_1",
+      "target": "backend_app_admin_repository",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_9",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_11",
+      "target": "backend_app_admin_repository_adminrepository_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_15",
+      "target": "backend_app_admin_repository_adminrepository_permissions",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_20",
+      "target": "backend_app_admin_repository_adminrepository_get",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_24",
+      "target": "backend_app_admin_repository_adminrepository_page",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_30",
+      "target": "backend_app_admin_repository_adminrepository_insert",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_35",
+      "target": "backend_app_admin_repository_adminrepository_update",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_40",
+      "target": "backend_app_admin_repository_adminrepository_valid_portfolios",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_46",
+      "target": "backend_app_admin_repository_adminrepository_active_admin_count",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_repository_rationale_50",
+      "target": "backend_app_admin_repository_adminrepository_audit",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/repository.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "fastapi",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_repository",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_schemas",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_auth_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_assignment_portfolios",
+      "target": "backend_app_admin_router_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_assignment_portfolios",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_assignment_portfolios",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_assignment_portfolios",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_router_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_users",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_router_py_post",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_create_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_router_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_get_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_router_py_put",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_update_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_delete_user",
+      "target": "backend_app_admin_router_py_delete",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_delete_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_delete_user",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_delete_user",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_delete_user",
+      "target": "backend_app_admin_router_py_response",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_router_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_roles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_router_py_post",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_create_role",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_router_py_put",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_router_update_role",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_1",
+      "target": "backend_app_admin_router",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_19",
+      "target": "backend_app_admin_router_assignment_portfolios",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_28",
+      "target": "backend_app_admin_router_users",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_37",
+      "target": "backend_app_admin_router_create_user",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_43",
+      "target": "backend_app_admin_router_get_user",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_51",
+      "target": "backend_app_admin_router_update_user",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_57",
+      "target": "backend_app_admin_router_delete_user",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_64",
+      "target": "backend_app_admin_router_roles",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_73",
+      "target": "backend_app_admin_router_create_role",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_rationale_79",
+      "target": "backend_app_admin_router_update_role",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput",
+      "target": "backend_app_admin_schemas_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput_name_valid",
+      "target": "backend_app_admin_schemas_py_field_validator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput",
+      "target": "backend_app_admin_schemas_userinput_name_valid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput_email_valid",
+      "target": "backend_app_admin_schemas_py_field_validator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput",
+      "target": "backend_app_admin_schemas_userinput_email_valid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput_password_bytes",
+      "target": "backend_app_admin_schemas_py_field_validator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_userinput",
+      "target": "backend_app_admin_schemas_userinput_password_bytes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_roleinput",
+      "target": "backend_app_admin_schemas_py_basemodel",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_roleinput_unique_permissions",
+      "target": "backend_app_admin_schemas_py_field_validator",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_roleinput",
+      "target": "backend_app_admin_schemas_roleinput_unique_permissions",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_1",
+      "target": "backend_app_admin_schemas",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_12",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_26",
+      "target": "backend_app_admin_schemas_userinput_name_valid",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_35",
+      "target": "backend_app_admin_schemas_userinput_email_valid",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_44",
+      "target": "backend_app_admin_schemas_userinput_password_bytes",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_51",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_schemas_rationale_60",
+      "target": "backend_app_admin_schemas_roleinput_unique_permissions",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/schemas.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "fastapi",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_repository",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_schemas",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_auth_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_core_security",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_ident",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_ident",
+      "target": "backend_app_admin_service_py_objectid",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_authorize",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_present_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_present_role",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_get_doc",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_save_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_deactivate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_service_save_role",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_get_doc",
+      "target": "backend_app_admin_service_ident",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_service_present_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_service_present_role",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_1",
+      "target": "backend_app_admin_service",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_14",
+      "target": "backend_app_admin_service_ident",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_21",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_27",
+      "target": "backend_app_admin_service_present_user",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_32",
+      "target": "backend_app_admin_service_present_role",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_37",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_45",
+      "target": "backend_app_admin_service_save_user",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_78",
+      "target": "backend_app_admin_service_deactivate",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_rationale_88",
+      "target": "backend_app_admin_service_save_role",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_applications_init_rationale_1",
       "target": "backend_app_applications_init",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/applications/__init__.py",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_applications_repository",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/applications/repository.py",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6088,6 +8834,230 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_audit_router",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "fastapi",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_admin_repository",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_admin_service",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_auth_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_audit_router_present",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_audit_router_safe_csv",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_audit_router_py_get",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_audit_router_listing",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_audit_router_py_db",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_audit_router_py_user",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "datetime",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_audit_router_py_response",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_audit_router_present",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_audit_router_safe_csv",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_rationale_1",
+      "target": "backend_app_audit_router",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_rationale_21",
+      "target": "backend_app_audit_router_present",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_rationale_29",
+      "target": "backend_app_audit_router_safe_csv",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_rationale_36",
+      "target": "backend_app_audit_router_listing",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_service",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/service.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_audit_service",
       "target": "backend_app_audit_repository",
       "relation": "imports_from",
@@ -6146,6 +9116,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/auth/__init__.py",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_auth_repository",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/repository.py",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7097,6 +10078,17 @@
     },
     {
       "source": "backend_app_auth_service",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/auth/service.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_auth_service",
       "target": "fastapi",
       "relation": "imports_from",
       "context": "import",
@@ -7516,6 +10508,17 @@
     },
     {
       "source": "backend_app_core_security",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/core/security.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_core_security",
       "target": "backend_app_core_security_hash_password",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -7601,6 +10604,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/core/security.py",
       "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_core_seed",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/core/seed.py",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8161,7 +11175,7 @@
     },
     {
       "source": "backend_app_main",
-      "target": "backend_app_core_config",
+      "target": "backend_app_admin_router",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -8172,7 +11186,7 @@
     },
     {
       "source": "backend_app_main",
-      "target": "backend_app_core_database",
+      "target": "backend_app_audit_router",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -8183,7 +11197,7 @@
     },
     {
       "source": "backend_app_main",
-      "target": "backend_app_core_seed",
+      "target": "backend_app_core_config",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -8194,11 +11208,33 @@
     },
     {
       "source": "backend_app_main",
+      "target": "backend_app_core_database",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main",
+      "target": "backend_app_core_seed",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/main.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_main",
       "target": "backend_app_main_create_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8209,7 +11245,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8220,7 +11256,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8230,7 +11266,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8240,7 +11276,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L49",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8252,7 +11288,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "backend/app/main.py",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8267,12 +11303,12 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_main_rationale_18",
+      "source": "backend_app_main_rationale_20",
       "target": "backend_app_main_create_app",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8283,6 +11319,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolios/__init__.py",
       "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_portfolios_repository",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/portfolios/repository.py",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9595,6 +12642,266 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_admin",
+      "target": "backend_app_core_config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_app_main",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_client",
+      "target": "backend_tests_test_admin_py_fixture",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_client",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_login",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_guards_and_live_permissions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_user_crud_conflicts_and_deactivation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_role_edits_are_live_and_last_admin_protected",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_tests_test_admin_test_audit_filters_export_and_formula_safety",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_admin",
+      "target": "backend_tests_test_admin_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_guards_and_live_permissions",
+      "target": "backend_tests_test_admin_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_user_crud_conflicts_and_deactivation",
+      "target": "backend_tests_test_admin_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_role_edits_are_live_and_last_admin_protected",
+      "target": "backend_tests_test_admin_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_role_edits_are_live_and_last_admin_protected",
+      "target": "backend_tests_test_admin_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_audit_filters_export_and_formula_safety",
+      "target": "backend_tests_test_admin_admin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_test_audit_filters_export_and_formula_safety",
+      "target": "backend_tests_test_admin_login",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_1",
+      "target": "backend_tests_test_admin",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_13",
+      "target": "backend_tests_test_admin_client",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_26",
+      "target": "backend_tests_test_admin_login",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_33",
+      "target": "backend_tests_test_admin_admin",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_41",
+      "target": "backend_tests_test_admin_test_guards_and_live_permissions",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_56",
+      "target": "backend_tests_test_admin_test_user_crud_conflicts_and_deactivation",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_81",
+      "target": "backend_tests_test_admin_test_role_edits_are_live_and_last_admin_protected",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin_rationale_107",
+      "target": "backend_tests_test_admin_test_audit_filters_export_and_formula_safety",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_applications",
       "target": "backend_app_core_config",
       "relation": "imports_from",
@@ -10695,6 +14002,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_e2e_admin_spec",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/admin.spec.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_e2e_applications_spec",
       "target": "ref_playwright_test",
       "relation": "imports_from",
@@ -11249,6 +14567,506 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_admin_admin_test",
+      "target": "ref_testing_library_jest_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "frontend_src_admin_admin_test_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "frontend_src_admin_admin_test_roles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "frontend_src_admin_admin_test_reply",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_admin_test",
+      "target": "frontend_src_admin_admin_test_reply",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_api",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_api_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_auth_authcontext",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_auth_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_types_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_account",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_role",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_form",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_empty",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_permissions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_load",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_edit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_save",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_deactivate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_saverole",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_load",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_edit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_admin_adminpage_adminpage_deactivate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage_save",
+      "target": "frontend_src_admin_adminpage_adminpage_load",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage_deactivate",
+      "target": "frontend_src_admin_adminpage_adminpage_load",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage_saverole",
+      "target": "frontend_src_admin_adminpage_adminpage_load",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_api",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_api_api",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_auth_authcontext",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_auth_authcontext_useauth",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_admin_auditpage_event",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_admin_auditpage_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage",
+      "target": "frontend_src_admin_auditpage_auditpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage_auditpage",
+      "target": "frontend_src_admin_auditpage_auditpage_apply",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage_auditpage",
+      "target": "frontend_src_admin_auditpage_auditpage_download",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage_auditpage",
+      "target": "frontend_src_admin_auditpage_auditpage_download",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_api",
       "target": "frontend_src_api_api",
       "relation": "contains",
@@ -11403,11 +15221,33 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_admin_adminpage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_admin_auditpage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_protected",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11417,7 +15257,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L50",
+      "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -11428,7 +15268,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L56",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13640,6 +17480,17 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_admin_admin_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/admin.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_app",
       "target": "frontend_src_auth_loginpage_loginpage",
       "relation": "imports",
@@ -13739,6 +17590,28 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_app",
+      "target": "frontend_src_admin_adminpage_adminpage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_admin_auditpage_auditpage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_applications_applications_test",
       "target": "frontend_src_app_app",
       "relation": "imports",
@@ -13790,6 +17663,193 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/portfolios/portfolios.test.tsx",
       "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_deactivate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_present_role",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_present_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_save_role",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_admin_service_save_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_auth_router_unrestricted_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_auth_service_public_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service",
+      "target": "backend_app_core_security_hash_password",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -13911,6 +17971,50 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/applications/service.py",
       "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_auth_router_unrestricted_user",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router",
+      "target": "backend_app_core_database_get_db",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14240,7 +18344,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14251,7 +18355,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14262,7 +18366,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14410,6 +18514,28 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_admin",
+      "target": "backend_app_core_config_settings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_admin",
+      "target": "backend_app_main_create_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_applications",
       "target": "backend_app_core_config_settings",
       "relation": "imports",
@@ -14494,6 +18620,50 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolios.py",
       "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_auth_authcontext_useauth",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage",
+      "target": "frontend_src_api_api",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage_auditpage",
+      "target": "frontend_src_auth_authcontext_useauth",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_auditpage_auditpage",
+      "target": "frontend_src_api_api",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/admin/AuditPage.tsx",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14504,7 +18674,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14729,6 +18899,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_admin_service_present_user",
+      "target": "backend_app_auth_service_public_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_auth_router_current_user",
       "target": "backend_app_core_security_decode_token",
       "relation": "calls",
@@ -14845,7 +19026,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14856,7 +19037,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14867,7 +19048,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -14880,6 +19061,226 @@
       "source_file": "backend/tests/test_auth.py",
       "source_location": "L113",
       "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_assignment_portfolios",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L29",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L38",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L44",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L52",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_delete_user",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L58",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L65",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L74",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L80",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L72",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L78",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L36",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L50",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_authorize",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_get_doc",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L36",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L44",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L77",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L87",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_schemas_roleinput",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L87",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_schemas_userinput",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L44",
+      "weight": 0.8,
       "_origin": "ast"
     },
     {
@@ -15033,6 +19434,17 @@
       "confidence_score": 0.95,
       "source_file": "backend/app/applications/service.py",
       "source_location": "L64",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_admin_repository_adminrepository",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L37",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -15274,7 +19686,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.95,
       "source_file": "backend/app/main.py",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -15422,6 +19834,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_admin_client",
+      "target": "backend_app_core_config_settings",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_applications_client",
       "target": "backend_app_core_config_settings",
       "relation": "uses",
@@ -15474,6 +19897,174 @@
       "source_file": "backend/tests/test_portfolios.py",
       "source_location": "L15",
       "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_assignment_portfolios",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_service_present_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_user",
+      "target": "backend_app_admin_service_save_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_service_present_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_get_user",
+      "target": "backend_app_admin_service_get_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_user",
+      "target": "backend_app_admin_service_save_user",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_delete_user",
+      "target": "backend_app_admin_service_deactivate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_service_present_role",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_create_role",
+      "target": "backend_app_admin_service_save_role",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_update_role",
+      "target": "backend_app_admin_service_save_role",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_core_security_hash_password",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L58",
+      "weight": 1.0,
       "_origin": "ast"
     },
     {
@@ -15533,6 +20124,18 @@
       "confidence_score": 1.0,
       "source_file": "backend/app/applications/router.py",
       "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_admin_service_authorize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15664,7 +20267,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/main.py",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15676,7 +20279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/main.py",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15688,7 +20291,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/main.py",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15777,6 +20380,18 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_admin_client",
+      "target": "backend_app_main_create_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_admin.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_applications_client",
       "target": "backend_app_main_create_app",
       "relation": "calls",
@@ -15825,20 +20440,56 @@
       "_origin": "ast"
     },
     {
-      "source": "frontend_src_app_protected",
-      "target": "frontend_src_auth_authcontext_authprovider_signout",
+      "source": "frontend_src_admin_adminpage_adminpage_load",
+      "target": "frontend_src_api_api",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "frontend/src/App.tsx",
-      "source_location": "L29",
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage_save",
+      "target": "frontend_src_api_api",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage_deactivate",
+      "target": "frontend_src_api_api",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_admin_adminpage_adminpage_saverole",
+      "target": "frontend_src_api_api",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/admin/AdminPage.tsx",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "frontend_src_app_protected",
-      "target": "frontend_src_auth_profilepage_profilepage",
+      "target": "frontend_src_auth_authcontext_authprovider_signout",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -15850,43 +20501,19 @@
     },
     {
       "source": "frontend_src_app_protected",
-      "target": "frontend_src_portfolios_portfoliolist_portfoliolist",
+      "target": "frontend_src_auth_profilepage_profilepage",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "frontend_src_app_protected",
-      "target": "frontend_src_portfolios_portfolioform_portfolioform",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/App.tsx",
-      "source_location": "L35",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "frontend_src_app_protected",
-      "target": "frontend_src_portfolios_portfoliodetail_portfoliodetail",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/App.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "frontend_src_app_protected",
-      "target": "frontend_src_dashboard_dashboardpage_dashboardpage",
+      "target": "frontend_src_admin_adminpage_adminpage",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -15898,7 +20525,7 @@
     },
     {
       "source": "frontend_src_app_protected",
-      "target": "frontend_src_applications_applicationlist_applicationlist",
+      "target": "frontend_src_admin_auditpage_auditpage",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -15910,7 +20537,7 @@
     },
     {
       "source": "frontend_src_app_protected",
-      "target": "frontend_src_applications_applicationform_applicationform",
+      "target": "frontend_src_portfolios_portfoliolist_portfoliolist",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -15922,13 +20549,73 @@
     },
     {
       "source": "frontend_src_app_protected",
-      "target": "frontend_src_applications_applicationdetail_applicationdetail",
+      "target": "frontend_src_portfolios_portfolioform_portfolioform",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.tsx",
       "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_protected",
+      "target": "frontend_src_portfolios_portfoliodetail_portfoliodetail",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_protected",
+      "target": "frontend_src_dashboard_dashboardpage_dashboardpage",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_protected",
+      "target": "frontend_src_applications_applicationlist_applicationlist",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_protected",
+      "target": "frontend_src_applications_applicationform_applicationform",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_protected",
+      "target": "frontend_src_applications_applicationdetail_applicationdetail",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15940,7 +20627,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L53",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -15952,7 +20639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.tsx",
-      "source_location": "L55",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16001,6 +20688,222 @@
       "confidence_score": 1.0,
       "source_file": "frontend/src/auth/ProfilePage.tsx",
       "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_assignment_portfolios",
+      "target": "backend_app_admin_repository_adminrepository_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_users",
+      "target": "backend_app_admin_repository_adminrepository_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_router_roles",
+      "target": "backend_app_admin_repository_adminrepository_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/router.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_authorize",
+      "target": "backend_app_admin_repository_adminrepository_permissions",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_get_doc",
+      "target": "backend_app_admin_repository_adminrepository_get",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository_valid_portfolios",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository_active_admin_count",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository_update",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository_insert",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository_audit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_user",
+      "target": "backend_app_admin_repository_adminrepository_get",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_repository_adminrepository_active_admin_count",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_repository_adminrepository_update",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_deactivate",
+      "target": "backend_app_admin_repository_adminrepository_audit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_repository_adminrepository_update",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_repository_adminrepository_insert",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_repository_adminrepository_audit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_admin_service_save_role",
+      "target": "backend_app_admin_repository_adminrepository_get",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/admin/service.py",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16133,6 +21036,42 @@
       "confidence_score": 0.85,
       "source_file": "backend/app/applications/service.py",
       "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_admin_repository_adminrepository_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_admin_repository_adminrepository_permissions",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_audit_router_listing",
+      "target": "backend_app_admin_repository_adminrepository_audit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "backend/app/audit/router.py",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -16479,8 +21418,8 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_applications_router_update",
-      "_tgt": "backend_app_applications_router_py_db"
+      "_src": "backend_app_applications_router_py_db",
+      "_tgt": "backend_app_applications_router_update"
     },
     {
       "source": "backend_app_applications_router_py_user",
@@ -16531,8 +21470,8 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_applications_router_update",
-      "_tgt": "backend_app_applications_router_py_user"
+      "_src": "backend_app_applications_router_py_user",
+      "_tgt": "backend_app_applications_router_update"
     },
     {
       "source": "backend_app_applications_router_py_post",
@@ -16557,8 +21496,8 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "_src": "backend_app_applications_router_update",
-      "_tgt": "backend_app_applications_router_py_put"
+      "_src": "backend_app_applications_router_py_put",
+      "_tgt": "backend_app_applications_router_update"
     },
     {
       "source": "backend_app_applications_router_py_delete",
@@ -16916,6 +21855,32 @@
       "_tgt": "model_validator"
     },
     {
+      "source": "backend_app_dashboard_router_py_get",
+      "target": "backend_app_dashboard_router_get_executive",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/dashboard/router.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_dashboard_router_get_executive",
+      "_tgt": "backend_app_dashboard_router_py_get"
+    },
+    {
+      "source": "backend_app_dashboard_service_py_asyncdatabase",
+      "target": "backend_app_dashboard_service_executive",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/dashboard/service.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_dashboard_service_executive",
+      "_tgt": "backend_app_dashboard_service_py_asyncdatabase"
+    },
+    {
       "source": "backend_app_portfolios_repository_py_objectid",
       "target": "backend_app_portfolios_repository_portfoliorepository_applications",
       "relation": "references",
@@ -17107,8 +22072,8 @@
       "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_portfolios_router_update",
-      "_tgt": "backend_app_portfolios_router_py_db"
+      "_src": "backend_app_portfolios_router_py_db",
+      "_tgt": "backend_app_portfolios_router_update"
     },
     {
       "source": "backend_app_portfolios_router_py_user",
@@ -17172,8 +22137,8 @@
       "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
-      "_src": "backend_app_portfolios_router_update",
-      "_tgt": "backend_app_portfolios_router_py_user"
+      "_src": "backend_app_portfolios_router_py_user",
+      "_tgt": "backend_app_portfolios_router_update"
     },
     {
       "source": "backend_app_portfolios_router_py_post",
@@ -17306,6 +22271,19 @@
       "_tgt": "backend_tests_test_auth_py_fixture"
     },
     {
+      "source": "backend_tests_test_dashboard_py_fixture",
+      "target": "backend_tests_test_dashboard_dashboard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_dashboard.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_dashboard_dashboard",
+      "_tgt": "backend_tests_test_dashboard_py_fixture"
+    },
+    {
       "source": "backend_tests_test_portfolios_py_fixture",
       "target": "backend_tests_test_portfolios_client",
       "relation": "references",
@@ -17320,10 +22298,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-18T12:37:47.602811+00:00",
+    "built_at": "2026-11-18T12:45:55.177826+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000418112612062664\\developer",
     "force": true,
-    "files_scanned": 62
+    "files_scanned": 73
   }
 }

@@ -3,19 +3,21 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { api } from '../api';
 import { useAuth } from '../auth/AuthContext';
 import type { ApplicationInventoryPage, PortfolioPage } from '../types';
+import { downloadReport } from '../reports/ReportsPage';
 
 /** Display a scoped, filterable application inventory. */
 export default function ApplicationList() {
   const { token } = useAuth();
   const [params, setParams] = useSearchParams();
-  const [page, setPage] = useState<ApplicationInventoryPage | null>(null);
+  const [page, setPage] = useState<(ApplicationInventoryPage & { canExport: boolean }) | null>(null);
   const [portfolios, setPortfolios] = useState<PortfolioPage | null>(null);
   const [error, setError] = useState('');
+  const [exporting, setExporting] = useState(false);
   const offset = Math.max(0, Number(params.get('offset')) || 0);
   useEffect(() => {
     let active = true;
     setPage(null); setError('');
-    api<ApplicationInventoryPage>(`/applications?${params.toString()}`, {}, token || undefined)
+    api<ApplicationInventoryPage & { canExport: boolean }>(`/reports/applications?${params.toString()}`, {}, token || undefined)
       .then(data => { if (active) setPage(data); })
       .catch(err => { if (active) setError(err.message); });
     return () => { active = false; };
@@ -42,12 +44,20 @@ export default function ApplicationList() {
     if (key !== 'offset') next.delete('offset');
     setParams(next);
   }
+  async function download() {
+    setError('');
+    setExporting(true);
+    try { await downloadReport('applications', params, token); }
+    catch (err) { setError((err as Error).message); }
+    finally { setExporting(false); }
+  }
   return (
     <main className="content">
       <p className="eyebrow">INVENTORY</p>
       <h1>Application Repository</h1>
       <p>Explore application health, ownership and risk.</p>
       {page?.canCreate && <Link to="/applications/new">Create application</Link>}
+      {page?.canExport && <button disabled={exporting} onClick={() => void download()}>{exporting ? 'Exporting…' : 'Export CSV'}</button>}
       <div className="portfolio-filters">
         <label>Search<input value={params.get('search') || ''} onChange={e => change('search', e.target.value)} /></label>
         <label>Portfolio<select value={params.get('portfolioId') || ''} onChange={e => change('portfolioId', e.target.value)}><option value="">All portfolios</option>{portfolios?.items.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>

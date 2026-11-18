@@ -11,6 +11,7 @@ from app.applications.router import router as application_router
 from app.dashboard.router import router as dashboard_router
 from app.admin.router import router as admin_router
 from app.audit.router import router as audit_router
+from app.reports.router import router as reports_router
 from app.core.config import Settings
 from app.core.database import create_client
 from app.core.seed import seed_database
@@ -48,6 +49,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.include_router(dashboard_router)
     application.include_router(admin_router)
     application.include_router(audit_router)
+    application.include_router(reports_router)
 
     @application.get("/api/health", tags=["Health"])
     async def health() -> dict[str, str]:
