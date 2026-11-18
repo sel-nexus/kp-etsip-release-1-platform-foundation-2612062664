@@ -77,26 +77,131 @@ export default function AdminPage() {
       {loading && <p role="status">Loading administration…</p>}
       {tab === 'users' && <>
         <h2>Users</h2>
-        <div className="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Role</th><th scope="col">Status</th><th scope="col">Actions</th></tr></thead><tbody>
-          {users.map(u => <tr key={u.id}><td>{u.name}</td><td>{u.email}</td><td>{u.role}</td><td>{u.status}</td><td><button type="button" onClick={() => edit(u)}>Edit {u.name}</button> {u.status === 'Active' && <button type="button" onClick={() => void deactivate(u.id)}>Deactivate {u.name}</button>}</td></tr>)}
-        </tbody></table></div>
-        <div className="pagination"><button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button><span>{offset + 1}–{Math.min(offset + 25, total)} of {total}</span><button disabled={offset + 25 >= total} onClick={() => setOffset(offset + 25)}>Next</button></div>
-        <section className="card portfolio-form"><h2>{editing ? 'Edit user' : 'Create user'}</h2>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map(u => <tr key={u.id}>
+                <td>{u.name}</td>
+                <td>{u.email}</td>
+                <td>{u.role}</td>
+                <td>{u.status}</td>
+                <td>
+                  <button type="button" onClick={() => edit(u)}>Edit {u.name}</button>{' '}
+                  {u.status === 'Active' && <button type="button" onClick={() => void deactivate(u.id)}>Deactivate {u.name}</button>}
+                </td>
+              </tr>)}
+            </tbody>
+          </table>
+        </div>
+        <div className="pagination">
+          <button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button>
+          <span>{offset + 1}–{Math.min(offset + 25, total)} of {total}</span>
+          <button disabled={offset + 25 >= total} onClick={() => setOffset(offset + 25)}>Next</button>
+        </div>
+        <section className="card portfolio-form">
+          <h2>{editing ? 'Edit user' : 'Create user'}</h2>
           <form onSubmit={save}>
-            <label htmlFor="admin-name">Name</label><input id="admin-name" required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
-            <label htmlFor="admin-email">Email</label><input id="admin-email" type="email" required value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
-            <label htmlFor="admin-password">{editing ? 'Reset password (optional)' : 'Initial password'}</label><input id="admin-password" type="password" minLength={12} maxLength={72} required={!editing} value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} autoComplete="new-password" />
-            <label htmlFor="admin-role">Role</label><select id="admin-role" value={form.role} onChange={e => setForm({ ...form, role: e.target.value })}>{roles.map(r => <option key={r.id}>{r.name}</option>)}</select>
-            <label htmlFor="admin-status">Status</label><select id="admin-status" value={form.status} onChange={e => setForm({ ...form, status: e.target.value })}><option>Active</option><option>Inactive</option></select>
-            <label htmlFor="admin-manager">Manager name</label><input id="admin-manager" value={form.managerName} onChange={e => setForm({ ...form, managerName: e.target.value })} />
-            <label><input type="checkbox" checked={form.vendorIndicator} onChange={e => setForm({ ...form, vendorIndicator: e.target.checked })} /> Vendor</label>
-            <fieldset><legend>Portfolio access</legend><p>Empty means all for Administrator, Executive and Auditor; none for other roles.</p>{portfolios.map(p => <label key={p.id} className="admin-check"><input type="checkbox" checked={form.portfolioAccess.includes(p.id)} onChange={e => setForm({ ...form, portfolioAccess: e.target.checked ? [...form.portfolioAccess, p.id] : form.portfolioAccess.filter(id => id !== p.id) })} /> {p.name}</label>)}<div className="pagination"><button type="button" disabled={portfolioOffset === 0} onClick={() => setPortfolioOffset(Math.max(0, portfolioOffset - 100))}>Previous portfolios</button><span>{portfolioTotal ? portfolioOffset + 1 : 0}–{Math.min(portfolioOffset + 100, portfolioTotal)} of {portfolioTotal}</span><button type="button" disabled={portfolioOffset + 100 >= portfolioTotal} onClick={() => setPortfolioOffset(portfolioOffset + 100)}>Next portfolios</button></div></fieldset>
-            <button type="submit">Save user</button>{editing && <button type="button" onClick={() => { setEditing(null); setForm(empty); }}>Cancel edit</button>}
+            <label htmlFor="admin-name">Name</label>
+            <input id="admin-name" required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+            <label htmlFor="admin-email">Email</label>
+            <input id="admin-email" type="email" required value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
+            <label htmlFor="admin-password">{editing ? 'Reset password (optional)' : 'Initial password'}</label>
+            <input
+              id="admin-password"
+              type="password"
+              minLength={12}
+              maxLength={72}
+              required={!editing}
+              value={form.password}
+              onChange={e => setForm({ ...form, password: e.target.value })}
+              autoComplete="new-password"
+            />
+            <label htmlFor="admin-role">Role</label>
+            <select id="admin-role" value={form.role} onChange={e => setForm({ ...form, role: e.target.value })}>
+              {roles.map(r => <option key={r.id}>{r.name}</option>)}
+            </select>
+            <label htmlFor="admin-status">Status</label>
+            <select id="admin-status" value={form.status} onChange={e => setForm({ ...form, status: e.target.value })}>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+            <label htmlFor="admin-manager">Manager name</label>
+            <input id="admin-manager" value={form.managerName} onChange={e => setForm({ ...form, managerName: e.target.value })} />
+            <label>
+              <input type="checkbox" checked={form.vendorIndicator} onChange={e => setForm({ ...form, vendorIndicator: e.target.checked })} /> Vendor</label>
+            <fieldset>
+              <legend>Portfolio access</legend>
+              <p>Empty means all for Administrator, Executive and Auditor; none for other roles.</p>
+              {portfolios.map(p => <label key={p.id} className="admin-check">
+                <input
+                  type="checkbox"
+                  checked={form.portfolioAccess.includes(p.id)}
+                  onChange={e => setForm({ ...form, portfolioAccess: e.target.checked ? [...form.portfolioAccess, p.id] : form.portfolioAccess.filter(id => id !== p.id) })}
+                />{' '}
+                {p.name}
+              </label>)}
+              <div className="pagination">
+                <button type="button" disabled={portfolioOffset === 0} onClick={() => setPortfolioOffset(Math.max(0, portfolioOffset - 100))}>Previous portfolios</button>
+                <span>{portfolioTotal ? portfolioOffset + 1 : 0}–{Math.min(portfolioOffset + 100, portfolioTotal)} of {portfolioTotal}</span>
+                <button type="button" disabled={portfolioOffset + 100 >= portfolioTotal} onClick={() => setPortfolioOffset(portfolioOffset + 100)}>Next portfolios</button>
+              </div>
+            </fieldset>
+            <button type="submit">Save user</button>
+            {editing && <button type="button" onClick={() => { setEditing(null); setForm(empty); }}>Cancel edit</button>}
           </form>
         </section>
       </>}
-      {tab === 'roles' && <><h2>Roles</h2><div className="table-wrap"><table><thead><tr><th scope="col">Role</th><th scope="col">Permissions</th><th scope="col">Action</th></tr></thead><tbody>{roles.map(r => <tr key={r.id}><td>{r.name}</td><td>{r.permissions.join(', ')}</td><td><button onClick={() => setRole(r)}>Edit {r.name}</button></td></tr>)}</tbody></table></div>
-        {role && <section className="card portfolio-form"><h2>Edit {role.name}</h2><form onSubmit={saveRole}><label htmlFor="role-description">Description</label><input id="role-description" value={role.description} onChange={e => setRole({ ...role, description: e.target.value })} /><fieldset><legend>Permissions</legend>{permissions.map(p => <label key={p} className="admin-check"><input type="checkbox" checked={role.permissions.includes(p)} onChange={e => setRole({ ...role, permissions: e.target.checked ? [...role.permissions, p] : role.permissions.filter(item => item !== p) })} /> {p}</label>)}</fieldset><button>Save role</button><button type="button" onClick={() => setRole(null)}>Cancel role edit</button></form></section>}
+      {tab === 'roles' && <>
+        <h2>Roles</h2>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Role</th>
+                <th scope="col">Permissions</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {roles.map(r => <tr key={r.id}>
+                <td>{r.name}</td>
+                <td>{r.permissions.join(', ')}</td>
+                <td>
+                  <button onClick={() => setRole(r)}>Edit {r.name}</button>
+                </td>
+              </tr>)}
+            </tbody>
+          </table>
+        </div>
+        {role && <section className="card portfolio-form">
+          <h2>Edit {role.name}</h2>
+          <form onSubmit={saveRole}>
+            <label htmlFor="role-description">Description</label>
+            <input id="role-description" value={role.description} onChange={e => setRole({ ...role, description: e.target.value })} />
+            <fieldset>
+              <legend>Permissions</legend>
+              {permissions.map(p => <label key={p} className="admin-check">
+                <input
+                  type="checkbox"
+                  checked={role.permissions.includes(p)}
+                  onChange={e => setRole({ ...role, permissions: e.target.checked ? [...role.permissions, p] : role.permissions.filter(item => item !== p) })}
+                />{' '}
+                {p}
+              </label>)}
+            </fieldset>
+            <button>Save role</button>
+            <button type="button" onClick={() => setRole(null)}>Cancel role edit</button>
+          </form>
+        </section>}
       </>}
     </main>
   );

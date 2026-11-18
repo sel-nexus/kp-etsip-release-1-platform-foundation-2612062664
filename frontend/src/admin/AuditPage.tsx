@@ -47,18 +47,62 @@ export default function AuditPage() {
       <h1>Audit log</h1>
       <p>Read sensitive activity. CSV export downloads the current page and requires export permission.</p>
       <form className="dashboard-filters" onSubmit={apply}>
-        <label>User ID<input value={userId} onChange={e => setUserId(e.target.value)} /></label>
-        <label>Action<select value={action} onChange={e => setAction(e.target.value)}><option value="">All actions</option>{['login', 'create', 'edit', 'delete', 'roleChange', 'permissionChange', 'export'].map(item => <option key={item}>{item}</option>)}</select></label>
-        <label>From (UTC)<input type="date" value={from} onChange={e => setFrom(e.target.value)} /></label>
-        <label>To (UTC)<input type="date" value={to} onChange={e => setTo(e.target.value)} /></label>
+        <label>
+          User ID
+          <input value={userId} onChange={e => setUserId(e.target.value)} />
+        </label>
+        <label>
+          Action
+          <select value={action} onChange={e => setAction(e.target.value)}>
+            <option value="">All actions</option>
+            {['login', 'create', 'edit', 'delete', 'roleChange', 'permissionChange', 'export'].map(item => (
+              <option key={item}>{item}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          From (UTC)
+          <input type="date" value={from} onChange={e => setFrom(e.target.value)} />
+        </label>
+        <label>
+          To (UTC)
+          <input type="date" value={to} onChange={e => setTo(e.target.value)} />
+        </label>
         <button>Apply filters</button>
       </form>
       {page.canExport && <button onClick={() => void download()}>Export current page CSV</button>}
       {error && <p role="alert" className="error">{error}</p>}
       {loading && <p role="status">Loading audit log…</p>}
       {!loading && !page.items.length && <p>No audit events match these filters.</p>}
-      <div className="table-wrap"><table><thead><tr><th scope="col">Time</th><th scope="col">User</th><th scope="col">Action</th><th scope="col">Entity</th><th scope="col">Details</th></tr></thead><tbody>{page.items.map(item => <tr key={item.id}><td>{new Date(item.timestamp).toLocaleString()}</td><td>{item.userName} {item.userId && <small>({item.userId})</small>}</td><td>{item.action}</td><td>{item.entityType} {item.entityId}</td><td>{item.details}</td></tr>)}</tbody></table></div>
-      <div className="pagination"><button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button><span>{page.total ? offset + 1 : 0}–{Math.min(offset + 25, page.total)} of {page.total}</span><button disabled={offset + 25 >= page.total} onClick={() => setOffset(offset + 25)}>Next</button></div>
+      <div className="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">User</th>
+              <th scope="col">Action</th>
+              <th scope="col">Entity</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {page.items.map(item => (
+              <tr key={item.id}>
+                <td>{new Date(item.timestamp).toLocaleString()}</td>
+                <td>{item.userName} {item.userId && <small>({item.userId})</small>}</td>
+                <td>{item.action}</td>
+                <td>{item.entityType} {item.entityId}</td>
+                <td>{item.details}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="pagination">
+        <button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button>
+        <span>{page.total ? offset + 1 : 0}–{Math.min(offset + 25, page.total)} of {page.total}</span>
+        <button disabled={offset + 25 >= page.total} onClick={() => setOffset(offset + 25)}>Next</button>
+      </div>
     </main>
   );
 }

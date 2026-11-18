@@ -13,7 +13,7 @@ from app.admin.router import router as admin_router
 from app.audit.router import router as audit_router
 from app.reports.router import router as reports_router
 from app.core.config import Settings
-from app.core.database import create_client
+from app.core.database import create_client, require_transaction_topology
 from app.core.seed import seed_database
 
 
@@ -27,7 +27,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         try:
             application.state.settings = config
             application.state.db = client[config.mongodb_db]
-            await client.admin.command("ping")
+            await require_transaction_topology(client)
             await application.state.db.users.create_index("email", unique=True)
             await application.state.db.roles.create_index("name", unique=True)
             await application.state.db.portfolios.create_index("name", unique=True)

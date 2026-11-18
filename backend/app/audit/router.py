@@ -11,6 +11,7 @@ from app.admin.repository import AdminRepository
 from app.admin.service import authorize
 from app.auth.router import unrestricted_user
 from app.core.database import get_db
+from app.core.transactions import guard_inventory_actor, transact
 
 router = APIRouter(prefix='/api/audit-logs', tags=['Audit'])
 Db = Annotated[AsyncDatabase, Depends(get_db)]
@@ -29,6 +30,25 @@ def safe_csv(value: object) -> str:
     """Prevent spreadsheet formulas in text cells."""
     text = '' if value is None else str(value)
     return "'" + text if text.lstrip(' \t\r\n').startswith(('=', '+', '-', '@')) or text.startswith(('\t', '\r', '\n')) else text
+
+
+async def export_step(db, user, roles, operation, expected_scope=None):
+    """Serialize an export step against actor, session, and role revocation."""
+    async def guarded(session):
+        """Lock authorization documents before using live scope."""
+        state = await guard_inventory_actor(db, user, session)
+        if not state:
+            raise HTTPException(403, 'Export is not permitted')
+        live, permissions = state
+        if live['role'] not in roles or not {'view', 'export'}.issubset(permissions):
+            raise HTTPException(403, 'Export is not permitted')
+        scope = frozenset(str(ObjectId(value)) for value in live.get('portfolioAccess', [])
+                          if isinstance(value, str) and ObjectId.is_valid(value)) if live['role'] in {'Portfolio Leader', 'Engineer', 'Read Only'} else None
+        if expected_scope is not None and scope != expected_scope:
+            raise HTTPException(403, 'Export scope changed; retry')
+        return await operation(live, session), scope
+
+    return await transact(db, guarded)
 
 
 @router.get('', response_model=None)
@@ -55,7 +75,13 @@ async def listing(db: Db, user: User, userId: str | None = Query(None, max_lengt
             query['timestamp']['$gte'] = start.astimezone(timezone.utc)
         if end:
             query['timestamp']['$lte'] = end.astimezone(timezone.utc)
-    page = await repo.page('audit_logs', query, limit, offset)
+    if format == 'csv':
+        async def read_page(live, session):
+            """Read the requested page while authorization is guarded."""
+            return await repo.page('audit_logs', query, limit, offset)
+        page, _ = await export_step(db, user, {'Administrator', 'Auditor'}, read_page)
+    else:
+        page = await repo.page('audit_logs', query, limit, offset)
     items = [present(doc) for doc in page['items']]
     if format == 'json':
         return {'items': items, 'total': page['total'], 'canExport': 'export' in await repo.permissions(user['role'])}
@@ -65,5 +91,8 @@ async def listing(db: Db, user: User, userId: str | None = Query(None, max_lengt
     writer.writerow(fields)
     for item in items:
         writer.writerow([safe_csv(item[field]) for field in fields])
-    await repo.audit(user, 'export', 'audit', None, 'Audit log page exported')
+    async def record_export(live, session):
+        """Commit the success event with final authorization."""
+        await repo.audit(live, 'export', 'audit', None, 'Audit log page exported', session)
+    await export_step(db, user, {'Administrator', 'Auditor'}, record_export)
     return Response(output.getvalue(), media_type='text/csv', headers={'Content-Disposition': 'attachment; filename="audit-logs.csv"'})

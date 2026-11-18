@@ -6,6 +6,7 @@ from fastapi import HTTPException
 from pymongo.errors import DuplicateKeyError
 from app.portfolios.repository import PortfolioRepository
 from app.portfolios.schemas import PortfolioInput
+from app.core.transactions import guard_inventory_actor, guard_portfolio, transact
 
 SCOPED = {"Portfolio Leader", "Engineer", "Read Only"}
 
@@ -24,9 +25,10 @@ def scope(user: dict) -> list[ObjectId] | None:
     return [ObjectId(value) for value in user.get("portfolioAccess", []) if isinstance(value, str) and ObjectId.is_valid(value)]
 
 
-async def authorize(repo: PortfolioRepository, user: dict, permission: str, ident: ObjectId | None = None) -> list[str]:
+async def authorize(repo: PortfolioRepository, user: dict, permission: str, ident: ObjectId | None = None, permissions: list[str] | None = None) -> list[str]:
     """Intersect current generic permissions with fixed role and scope rules."""
-    permissions = await repo.permissions(user["role"])
+    if permissions is None:
+        permissions = await repo.permissions(user["role"])
     role = user["role"]
     allowed_role = {"view": {"Administrator", "Executive", "Portfolio Leader", "Engineer", "Auditor", "Read Only"}, "create": {"Administrator"}, "edit": {"Administrator", "Portfolio Leader"}, "delete": {"Administrator"}}
     if permission not in permissions or role not in allowed_role[permission]:
@@ -66,25 +68,37 @@ async def detail(repo: PortfolioRepository, user: dict, value: str) -> dict:
 async def mutate(repo: PortfolioRepository, user: dict, action: str, value: str | None = None, body: PortfolioInput | None = None) -> dict | None:
     """Validate authorization, persist a mutation, and record its audit event."""
     ident = identifier(value) if value else None
-    await authorize(repo, user, action, ident)
-    if ident is not None and not await repo.get(ident):
-        raise HTTPException(status_code=404, detail="Portfolio not found")
-    try:
-        if action == "create":
-            ident = await repo.create(body.model_dump())
-        elif action == "edit":
-            if not await repo.update(ident, body.model_dump()):
+
+    async def operation(session):
+        """Apply one retryable mutation and its audit event."""
+        guarded = await guard_inventory_actor(repo.db, user, session)
+        if not guarded:
+            raise HTTPException(status_code=403, detail="Not permitted")
+        live_user, permissions = guarded
+        await authorize(repo, live_user, action, ident, permissions)
+        key = ident
+        if action == "create" and body is not None:
+            key = await repo.create(body.model_dump(), session)
+        elif action == "edit" and key is not None and body is not None:
+            if not await repo.update(key, body.model_dump(), session):
+                raise HTTPException(status_code=404, detail="Portfolio not found")
+        elif action == "delete" and key is not None:
+            if not await guard_portfolio(repo.db, key, session):
+                raise HTTPException(status_code=404, detail="Portfolio not found")
+            if await repo.has_applications(key, session):
+                raise HTTPException(status_code=409, detail="Portfolio contains applications")
+            if await repo.has_assignments(key, session):
+                raise HTTPException(status_code=409, detail="Portfolio has user assignments")
+            if not await repo.delete(key, session):
                 raise HTTPException(status_code=404, detail="Portfolio not found")
         else:
-            if await repo.has_applications(ident):
-                raise HTTPException(status_code=409, detail="Portfolio contains applications")
-            if not await repo.delete(ident):
-                raise HTTPException(status_code=404, detail="Portfolio not found")
+            raise HTTPException(status_code=422, detail="Invalid portfolio mutation")
+        await repo.audit(live_user, action, key, session)
+        if action == "delete":
+            return None
+        return present(await repo.get(key, session), live_user, permissions)
+
+    try:
+        return await transact(repo.db, operation)
     except DuplicateKeyError as exc:
         raise HTTPException(status_code=409, detail="Portfolio name already exists") from exc
-    await repo.audit(user, action, ident)
-    if action == "delete":
-        return None
-    doc = await repo.get(ident)
-    permissions = await repo.permissions(user["role"])
-    return present(doc, user, permissions)

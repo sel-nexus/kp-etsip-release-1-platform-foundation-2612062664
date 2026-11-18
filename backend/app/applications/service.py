@@ -5,6 +5,7 @@ from fastapi import HTTPException
 from pymongo.errors import DuplicateKeyError
 from app.applications.repository import ApplicationRepository
 from app.applications.schemas import ApplicationInput
+from app.core.transactions import guard_inventory_actor, guard_portfolio, transact
 
 SCOPED = {"Portfolio Leader", "Engineer", "Read Only"}
 MUTATORS = {"Administrator", "Portfolio Leader", "Engineer"}
@@ -24,9 +25,10 @@ def identifier(value: str) -> ObjectId:
     return ObjectId(value)
 
 
-async def authorize(repo: ApplicationRepository, user: dict, action: str, portfolio_id: str | None = None) -> list[str]:
+async def authorize(repo: ApplicationRepository, user: dict, action: str, portfolio_id: str | None = None, permissions: list[str] | None = None) -> list[str]:
     """Intersect live grants with fixed role and portfolio restrictions."""
-    permissions = await repo.permissions(user["role"])
+    if permissions is None:
+        permissions = await repo.permissions(user["role"])
     roles = {"view": {"Administrator", "Executive", "Portfolio Leader", "Engineer", "Auditor", "Read Only"}, "create": MUTATORS, "edit": MUTATORS, "delete": {"Administrator"}}
     if action not in permissions or user["role"] not in roles[action]:
         raise HTTPException(status_code=403, detail="Not permitted")
@@ -36,9 +38,9 @@ async def authorize(repo: ApplicationRepository, user: dict, action: str, portfo
     return permissions
 
 
-async def present(repo: ApplicationRepository, doc: dict, user: dict, permissions: list[str]) -> dict:
+async def present(repo: ApplicationRepository, doc: dict, user: dict, permissions: list[str], session=None) -> dict:
     """Add a portfolio label and live effective action flags."""
-    portfolio = await repo.portfolio(doc["portfolioId"])
+    portfolio = await repo.portfolio(doc["portfolioId"], session)
     fields = {key: doc[key] for key in ApplicationInput.model_fields if key in doc}
     return {**fields, "id": str(doc["_id"]), "portfolioName": portfolio["name"] if portfolio else "Unknown portfolio", "canEdit": user["role"] in MUTATORS and "edit" in permissions, "canDelete": user["role"] == "Administrator" and "delete" in permissions}
 
@@ -63,31 +65,41 @@ async def detail(repo: ApplicationRepository, user: dict, value: str) -> dict:
 
 async def mutate(repo: ApplicationRepository, user: dict, action: str, value: str | None = None, body: ApplicationInput | None = None) -> dict | None:
     """Check source and destination scope, save, and audit the mutation."""
-    await authorize(repo, user, action)
     ident = identifier(value) if value else None
-    existing = await repo.get(ident) if ident else None
-    if ident and not existing:
-        raise HTTPException(status_code=404, detail="Application not found")
-    if existing:
-        await authorize(repo, user, action, existing["portfolioId"])
-    if body is not None:
-        await authorize(repo, user, action, body.portfolioId)
-        if not await repo.portfolio(body.portfolioId):
-            raise HTTPException(status_code=404, detail="Portfolio not found")
-    try:
+
+    async def operation(session):
+        """Re-read scope and apply one retryable mutation with its audit."""
+        guarded = await guard_inventory_actor(repo.db, user, session)
+        if not guarded:
+            raise HTTPException(status_code=403, detail="Not permitted")
+        live_user, permissions = guarded
+        await authorize(repo, live_user, action, permissions=permissions)
+        key = ident
+        existing = await repo.get(key, session) if key else None
+        if key and not existing:
+            raise HTTPException(status_code=404, detail="Application not found")
+        if existing:
+            await authorize(repo, live_user, action, existing["portfolioId"], permissions)
+        if body is not None:
+            await authorize(repo, live_user, action, body.portfolioId, permissions)
+            if not await guard_portfolio(repo.db, ObjectId(body.portfolioId), session):
+                raise HTTPException(status_code=404, detail="Portfolio not found")
         if action == "create" and body:
-            ident = await repo.create(body.model_dump(mode="json"))
-        elif action == "edit" and body and ident and existing:
-            if not await repo.update(ident, existing["portfolioId"], body.model_dump(mode="json")):
+            key = await repo.create(body.model_dump(mode="json"), session)
+        elif action == "edit" and body and key and existing:
+            if not await repo.update(key, existing["portfolioId"], body.model_dump(mode="json"), session):
                 raise HTTPException(status_code=409, detail="Application changed; reload and retry")
-        elif action == "delete" and ident:
-            if not await repo.delete(ident):
+        elif action == "delete" and key:
+            if not await repo.delete(key, session):
                 raise HTTPException(status_code=404, detail="Application not found")
         else:
             raise HTTPException(status_code=422, detail="Invalid application mutation")
+        await repo.audit(live_user, action, key, session)
+        if action == "delete":
+            return None
+        return await present(repo, await repo.get(key, session), live_user, permissions, session)
+
+    try:
+        return await transact(repo.db, operation)
     except DuplicateKeyError as exc:
         raise HTTPException(status_code=409, detail="Application name already exists") from exc
-    await repo.audit(user, action, ident)
-    if action == "delete":
-        return None
-    return await present(repo, await repo.get(ident), user, await repo.permissions(user["role"]))

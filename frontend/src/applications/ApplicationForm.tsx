@@ -57,25 +57,90 @@ export default function ApplicationForm() {
       {error && <p role="alert" className="error">{error}</p>}
       {allowed === null && !error && <p role="status">Checking access…</p>}
       {allowed === false && <p role="alert">You cannot change this application.</p>}
-      {allowed && <form className="portfolio-form" onSubmit={submit}>
-        {textFields.map(([key, label]) => <div key={key}>
-          <label htmlFor={key}>{label}</label>
-          {key === 'description' || key === 'technologyStack' ? <textarea id={key} maxLength={4000} value={form[key] || ''} onChange={e => setForm({ ...form, [key]: e.target.value })} /> : <input id={key} required={key === 'name'} maxLength={key.includes('Link') ? 2048 : 200} type={key.includes('Link') ? 'url' : 'text'} value={form[key] || ''} onChange={e => setForm({ ...form, [key]: e.target.value || (key.includes('Link') ? null : '') })} />}
-        </div>)}
-        <label htmlFor="portfolioId">Portfolio</label>
-        <select id="portfolioId" required value={form.portfolioId} onChange={e => setForm({ ...form, portfolioId: e.target.value })}>
-          <option value="">Select a portfolio</option>
-          {portfolios.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
-        </select>
-        <label htmlFor="criticality">Criticality</label>
-        <select id="criticality" value={form.criticality} onChange={e => setForm({ ...form, criticality: e.target.value as ApplicationInput['criticality'] })}>{['Low', 'Medium', 'High', 'Critical'].map(v => <option key={v}>{v}</option>)}</select>
-        <label htmlFor="lifecycleStatus">Lifecycle status</label>
-        <select id="lifecycleStatus" value={form.lifecycleStatus} onChange={e => setForm({ ...form, lifecycleStatus: e.target.value as ApplicationInput['lifecycleStatus'] })}>{['Active', 'Deprecated', 'Retired'].map(v => <option key={v}>{v}</option>)}</select>
-        <label htmlFor="riskLevel">Risk level</label>
-        <select id="riskLevel" value={form.riskLevel} onChange={e => setForm({ ...form, riskLevel: e.target.value as ApplicationInput['riskLevel'] })}>{['Low', 'Medium', 'High'].map(v => <option key={v}>{v}</option>)}</select>
-        {numberFields.map(([key, label, min, max]) => <div key={key}><label htmlFor={key}>{label}</label><input id={key} type="number" required min={min} max={max} step={1} value={form[key]} onChange={e => setForm({ ...form, [key]: e.target.value === '' ? '' : Number(e.target.value) })} /></div>)}
-        <button disabled={saving}>{saving ? 'Saving…' : 'Save application'}</button>
-      </form>}
+      {allowed && (
+        <form className="portfolio-form" onSubmit={submit}>
+          {textFields.map(([key, label]) => (
+            <div key={key}>
+              <label htmlFor={key}>{label}</label>
+              {key === 'description' || key === 'technologyStack' ? (
+                <textarea
+                  id={key}
+                  maxLength={4000}
+                  value={form[key] || ''}
+                  onChange={e => setForm({ ...form, [key]: e.target.value })}
+                />
+              ) : (
+                <input
+                  id={key}
+                  required={key === 'name'}
+                  maxLength={key.includes('Link') ? 2048 : 200}
+                  type={key.includes('Link') ? 'url' : 'text'}
+                  value={form[key] || ''}
+                  onChange={e => setForm({ ...form, [key]: e.target.value || (key.includes('Link') ? null : '') })}
+                />
+              )}
+            </div>
+          ))}
+          <label htmlFor="portfolioId">Portfolio</label>
+          <select
+            id="portfolioId"
+            required
+            value={form.portfolioId}
+            onChange={e => setForm({ ...form, portfolioId: e.target.value })}
+          >
+            <option value="">Select a portfolio</option>
+            {portfolios.map(p => (
+              <option key={p.id} value={p.id}>{p.name}</option>
+            ))}
+          </select>
+          <label htmlFor="criticality">Criticality</label>
+          <select
+            id="criticality"
+            value={form.criticality}
+            onChange={e => setForm({ ...form, criticality: e.target.value as ApplicationInput['criticality'] })}
+          >
+            {['Low', 'Medium', 'High', 'Critical'].map(v => (
+              <option key={v}>{v}</option>
+            ))}
+          </select>
+          <label htmlFor="lifecycleStatus">Lifecycle status</label>
+          <select
+            id="lifecycleStatus"
+            value={form.lifecycleStatus}
+            onChange={e => setForm({ ...form, lifecycleStatus: e.target.value as ApplicationInput['lifecycleStatus'] })}
+          >
+            {['Active', 'Deprecated', 'Retired'].map(v => (
+              <option key={v}>{v}</option>
+            ))}
+          </select>
+          <label htmlFor="riskLevel">Risk level</label>
+          <select
+            id="riskLevel"
+            value={form.riskLevel}
+            onChange={e => setForm({ ...form, riskLevel: e.target.value as ApplicationInput['riskLevel'] })}
+          >
+            {['Low', 'Medium', 'High'].map(v => (
+              <option key={v}>{v}</option>
+            ))}
+          </select>
+          {numberFields.map(([key, label, min, max]) => (
+            <div key={key}>
+              <label htmlFor={key}>{label}</label>
+              <input
+                id={key}
+                type="number"
+                required
+                min={min}
+                max={max}
+                step={1}
+                value={form[key]}
+                onChange={e => setForm({ ...form, [key]: e.target.value === '' ? '' : Number(e.target.value) })}
+              />
+            </div>
+          ))}
+          <button disabled={saving}>{saving ? 'Saving…' : 'Save application'}</button>
+        </form>
+      )}
     </main>
   );
 }

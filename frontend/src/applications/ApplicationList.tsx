@@ -59,20 +59,76 @@ export default function ApplicationList() {
       {page?.canCreate && <Link to="/applications/new">Create application</Link>}
       {page?.canExport && <button disabled={exporting} onClick={() => void download()}>{exporting ? 'Exporting…' : 'Export CSV'}</button>}
       <div className="portfolio-filters">
-        <label>Search<input value={params.get('search') || ''} onChange={e => change('search', e.target.value)} /></label>
-        <label>Portfolio<select value={params.get('portfolioId') || ''} onChange={e => change('portfolioId', e.target.value)}><option value="">All portfolios</option>{portfolios?.items.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
-        <label>Criticality<select value={params.get('criticality') || ''} onChange={e => change('criticality', e.target.value)}><option value="">All criticalities</option>{['Low', 'Medium', 'High', 'Critical'].map(v => <option key={v}>{v}</option>)}</select></label>
-        <label>Risk level<select value={params.get('riskLevel') || ''} onChange={e => change('riskLevel', e.target.value)}><option value="">All risks</option>{['Low', 'Medium', 'High'].map(v => <option key={v}>{v}</option>)}</select></label>
-        <label>Lifecycle status<select value={params.get('lifecycleStatus') || ''} onChange={e => change('lifecycleStatus', e.target.value)}><option value="">All statuses</option>{['Active', 'Deprecated', 'Retired'].map(v => <option key={v}>{v}</option>)}</select></label>
+        <label>Search
+          <input value={params.get('search') || ''} onChange={e => change('search', e.target.value)} />
+        </label>
+        <label>Portfolio
+          <select value={params.get('portfolioId') || ''} onChange={e => change('portfolioId', e.target.value)}>
+            <option value="">All portfolios</option>
+            {portfolios?.items.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+          </select>
+        </label>
+        <label>Criticality
+          <select value={params.get('criticality') || ''} onChange={e => change('criticality', e.target.value)}>
+            <option value="">All criticalities</option>
+            {['Low', 'Medium', 'High', 'Critical'].map(v => <option key={v}>{v}</option>)}
+          </select>
+        </label>
+        <label>Risk level
+          <select value={params.get('riskLevel') || ''} onChange={e => change('riskLevel', e.target.value)}>
+            <option value="">All risks</option>
+            {['Low', 'Medium', 'High'].map(v => <option key={v}>{v}</option>)}
+          </select>
+        </label>
+        <label>Lifecycle status
+          <select value={params.get('lifecycleStatus') || ''} onChange={e => change('lifecycleStatus', e.target.value)}>
+            <option value="">All statuses</option>
+            {['Active', 'Deprecated', 'Retired'].map(v => <option key={v}>{v}</option>)}
+          </select>
+        </label>
       </div>
       {error && <p role="alert" className="error">{error}</p>}
       {!page && !error && <p role="status">Loading applications…</p>}
       {page && <>
         <p aria-live="polite">{page.total} applications</p>
-        {page.items.length === 0 ? <p>No applications match these filters.</p> : <div className="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Portfolio</th><th scope="col">Criticality</th><th scope="col">Tier</th><th scope="col">Lifecycle Status</th><th scope="col">Health Score</th><th scope="col">Automation Coverage %</th><th scope="col">Open Critical Defects</th><th scope="col">Risk Level</th></tr></thead><tbody>
-          {page.items.map(item => <tr key={item.id}><td><Link to={`/applications/${item.id}`}>{item.name}</Link></td><td><Link to={`/portfolios/${item.portfolioId}`}>{item.portfolioName}</Link></td><td>{item.criticality}</td><td>{item.tier}</td><td>{item.lifecycleStatus}</td><td>{item.applicationHealthScore}</td><td>{item.automationCoverage}%</td><td>{item.openCriticalDefects}</td><td>{item.riskLevel}</td></tr>)}
-        </tbody></table></div>}
-        <div className="pagination"><button disabled={offset === 0} onClick={() => change('offset', String(Math.max(0, offset - 25)))}>Previous</button><button disabled={offset + 25 >= page.total} onClick={() => change('offset', String(offset + 25))}>Next</button></div>
+        {page.items.length === 0 ? <p>No applications match these filters.</p> : <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Portfolio</th>
+                <th scope="col">Criticality</th>
+                <th scope="col">Tier</th>
+                <th scope="col">Lifecycle Status</th>
+                <th scope="col">Health Score</th>
+                <th scope="col">Automation Coverage %</th>
+                <th scope="col">Open Critical Defects</th>
+                <th scope="col">Risk Level</th>
+              </tr>
+            </thead>
+            <tbody>
+              {page.items.map(item => <tr key={item.id}>
+                <td>
+                  <Link to={`/applications/${item.id}`}>{item.name}</Link>
+                </td>
+                <td>
+                  <Link to={`/portfolios/${item.portfolioId}`}>{item.portfolioName}</Link>
+                </td>
+                <td>{item.criticality}</td>
+                <td>{item.tier}</td>
+                <td>{item.lifecycleStatus}</td>
+                <td>{item.applicationHealthScore}</td>
+                <td>{item.automationCoverage}%</td>
+                <td>{item.openCriticalDefects}</td>
+                <td>{item.riskLevel}</td>
+              </tr>)}
+            </tbody>
+          </table>
+        </div>}
+        <div className="pagination">
+          <button disabled={offset === 0} onClick={() => change('offset', String(Math.max(0, offset - 25)))}>Previous</button>
+          <button disabled={offset + 25 >= page.total} onClick={() => change('offset', String(offset + 25))}>Next</button>
+        </div>
       </>}
     </main>
   );

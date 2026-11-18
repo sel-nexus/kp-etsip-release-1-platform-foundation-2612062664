@@ -83,15 +83,42 @@ export default function ReportsPage() {
       </label>
       <h2>{kind === 'applications' ? 'Application Report' : 'Portfolio Report'}</h2>
       <div className="portfolio-filters">
-        <label>Search<input value={params.get('search') || ''} onChange={e => change('search', e.target.value)} /></label>
+        <label>Search
+          <input value={params.get('search') || ''} onChange={e => change('search', e.target.value)} />
+        </label>
         {kind === 'applications' ? <>
-          <label>Portfolio ID<input value={params.get('portfolioId') || ''} onChange={e => change('portfolioId', e.target.value)} /></label>
-          <label>Criticality<select value={params.get('criticality') || ''} onChange={e => change('criticality', e.target.value)}><option value="">All criticalities</option>{['Low', 'Medium', 'High', 'Critical'].map(v => <option key={v}>{v}</option>)}</select></label>
-          <label>Risk level<select value={params.get('riskLevel') || ''} onChange={e => change('riskLevel', e.target.value)}><option value="">All risks</option>{['Low', 'Medium', 'High'].map(v => <option key={v}>{v}</option>)}</select></label>
-          <label>Lifecycle status<select value={params.get('lifecycleStatus') || ''} onChange={e => change('lifecycleStatus', e.target.value)}><option value="">All statuses</option>{['Active', 'Deprecated', 'Retired'].map(v => <option key={v}>{v}</option>)}</select></label>
+          <label>Portfolio ID
+            <input value={params.get('portfolioId') || ''} onChange={e => change('portfolioId', e.target.value)} />
+          </label>
+          <label>Criticality
+            <select value={params.get('criticality') || ''} onChange={e => change('criticality', e.target.value)}>
+              <option value="">All criticalities</option>
+              {['Low', 'Medium', 'High', 'Critical'].map(v => <option key={v}>{v}</option>)}
+            </select>
+          </label>
+          <label>Risk level
+            <select value={params.get('riskLevel') || ''} onChange={e => change('riskLevel', e.target.value)}>
+              <option value="">All risks</option>
+              {['Low', 'Medium', 'High'].map(v => <option key={v}>{v}</option>)}
+            </select>
+          </label>
+          <label>Lifecycle status
+            <select value={params.get('lifecycleStatus') || ''} onChange={e => change('lifecycleStatus', e.target.value)}>
+              <option value="">All statuses</option>
+              {['Active', 'Deprecated', 'Retired'].map(v => <option key={v}>{v}</option>)}
+            </select>
+          </label>
         </> : <>
-          <label>Status<select value={params.get('status') || ''} onChange={e => change('status', e.target.value)}><option value="">All statuses</option><option>Active</option><option>Archived</option></select></label>
-          <label>Product area<input value={params.get('productArea') || ''} onChange={e => change('productArea', e.target.value)} /></label>
+          <label>Status
+            <select value={params.get('status') || ''} onChange={e => change('status', e.target.value)}>
+              <option value="">All statuses</option>
+              <option>Active</option>
+              <option>Archived</option>
+            </select>
+          </label>
+          <label>Product area
+            <input value={params.get('productArea') || ''} onChange={e => change('productArea', e.target.value)} />
+          </label>
         </>}
       </div>
       {page?.canExport && <button disabled={exporting} onClick={() => void download()}>{exporting ? 'Exporting…' : 'Export CSV'}</button>}
@@ -100,11 +127,61 @@ export default function ReportsPage() {
       {page && <>
         <p aria-live="polite">{page.total} matching records</p>
         {!page.items.length ? <p>No records match these filters.</p> : <div className="table-wrap">
-          {kind === 'applications' ? <table><thead><tr><th scope="col">Name</th><th scope="col">Portfolio</th><th scope="col">Criticality</th><th scope="col">Tier</th><th scope="col">Lifecycle</th><th scope="col">Health</th><th scope="col">Quality</th><th scope="col">Automation %</th><th scope="col">Critical defects</th><th scope="col">Risk</th></tr></thead><tbody>
-            {(page.items as Application[]).map(item => <tr key={item.id}><td><Link to={`/applications/${item.id}`}>{item.name}</Link></td><td>{item.portfolioName}</td><td>{item.criticality}</td><td>{item.tier}</td><td>{item.lifecycleStatus}</td><td>{item.applicationHealthScore}</td><td>{item.qualityScore}</td><td>{item.automationCoverage}%</td><td>{item.openCriticalDefects}</td><td>{item.riskLevel}</td></tr>)}
-          </tbody></table> : <table><thead><tr><th scope="col">Name</th><th scope="col">Owner</th><th scope="col">Product area</th><th scope="col">Applications</th><th scope="col">Quality</th><th scope="col">Status</th></tr></thead><tbody>
-            {(page.items as Portfolio[]).map(item => <tr key={item.id}><td><Link to={`/portfolios/${item.id}`}>{item.name}</Link></td><td>{item.owner || '—'}</td><td>{item.productArea || '—'}</td><td>{item.applicationCount}</td><td>{item.qualityScore ?? 'No data'}</td><td>{item.status}</td></tr>)}
-          </tbody></table>}
+          {kind === 'applications' ? <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Portfolio</th>
+                <th scope="col">Criticality</th>
+                <th scope="col">Tier</th>
+                <th scope="col">Lifecycle</th>
+                <th scope="col">Health</th>
+                <th scope="col">Quality</th>
+                <th scope="col">Automation %</th>
+                <th scope="col">Critical defects</th>
+                <th scope="col">Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(page.items as Application[]).map(item => <tr key={item.id}>
+                <td>
+                  <Link to={`/applications/${item.id}`}>{item.name}</Link>
+                </td>
+                <td>{item.portfolioName}</td>
+                <td>{item.criticality}</td>
+                <td>{item.tier}</td>
+                <td>{item.lifecycleStatus}</td>
+                <td>{item.applicationHealthScore}</td>
+                <td>{item.qualityScore}</td>
+                <td>{item.automationCoverage}%</td>
+                <td>{item.openCriticalDefects}</td>
+                <td>{item.riskLevel}</td>
+              </tr>)}
+            </tbody>
+          </table> : <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Product area</th>
+                <th scope="col">Applications</th>
+                <th scope="col">Quality</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(page.items as Portfolio[]).map(item => <tr key={item.id}>
+                <td>
+                  <Link to={`/portfolios/${item.id}`}>{item.name}</Link>
+                </td>
+                <td>{item.owner || '—'}</td>
+                <td>{item.productArea || '—'}</td>
+                <td>{item.applicationCount}</td>
+                <td>{item.qualityScore ?? 'No data'}</td>
+                <td>{item.status}</td>
+              </tr>)}
+            </tbody>
+          </table>}
         </div>}
         <div className="pagination">
           <button disabled={offset === 0} onClick={() => change('offset', String(Math.max(0, offset - 25)))}>Previous</button>

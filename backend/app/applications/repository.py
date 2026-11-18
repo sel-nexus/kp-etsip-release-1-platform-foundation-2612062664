@@ -4,6 +4,7 @@ import re
 from datetime import datetime, timezone
 from bson import ObjectId
 from pymongo.asynchronous.database import AsyncDatabase
+from pymongo.asynchronous.client_session import AsyncClientSession
 
 
 class ApplicationRepository:
@@ -17,13 +18,13 @@ class ApplicationRepository:
         role_doc = await self.db.roles.find_one({"name": role})
         return role_doc.get("permissions", []) if role_doc else []
 
-    async def portfolio(self, ident: str) -> dict | None:
+    async def portfolio(self, ident: str, session: AsyncClientSession | None = None) -> dict | None:
         """Find the referenced portfolio."""
-        return await self.db.portfolios.find_one({"_id": ObjectId(ident)})
+        return await self.db.portfolios.find_one({"_id": ObjectId(ident)}, session=session)
 
-    async def get(self, ident: ObjectId) -> dict | None:
+    async def get(self, ident: ObjectId, session: AsyncClientSession | None = None) -> dict | None:
         """Find an application by its Mongo identifier."""
-        return await self.db.applications.find_one({"_id": ident})
+        return await self.db.applications.find_one({"_id": ident}, session=session)
 
     async def list(self, scope: list[str] | None, search: str, portfolio_id: str | None, criticality: str | None, risk: str | None, lifecycle: str | None, limit: int, offset: int) -> dict:
         """Apply safe literal filters and return a bounded page."""
@@ -43,21 +44,21 @@ class ApplicationRepository:
         cursor = self.db.applications.find(query).sort([("name", 1), ("_id", 1)]).skip(offset).limit(limit)
         return {"items": await cursor.to_list(limit), "total": await self.db.applications.count_documents(query)}
 
-    async def create(self, data: dict) -> ObjectId:
+    async def create(self, data: dict, session: AsyncClientSession) -> ObjectId:
         """Insert the validated record with timestamps."""
         now = datetime.now(timezone.utc)
-        return (await self.db.applications.insert_one({**data, "createdAt": now, "updatedAt": now})).inserted_id
+        return (await self.db.applications.insert_one({**data, "createdAt": now, "updatedAt": now}, session=session)).inserted_id
 
-    async def update(self, ident: ObjectId, old_portfolio: str, data: dict) -> bool:
+    async def update(self, ident: ObjectId, old_portfolio: str, data: dict, session: AsyncClientSession) -> bool:
         """Replace editable fields only if the original scope is unchanged."""
-        result = await self.db.applications.update_one({"_id": ident, "portfolioId": old_portfolio}, {"$set": {**data, "updatedAt": datetime.now(timezone.utc)}})
+        result = await self.db.applications.update_one({"_id": ident, "portfolioId": old_portfolio}, {"$set": {**data, "updatedAt": datetime.now(timezone.utc)}}, session=session)
         return bool(result.matched_count)
 
-    async def delete(self, ident: ObjectId) -> bool:
+    async def delete(self, ident: ObjectId, session: AsyncClientSession) -> bool:
         """Remove the selected record."""
-        return bool((await self.db.applications.delete_one({"_id": ident})).deleted_count)
+        return bool((await self.db.applications.delete_one({"_id": ident}, session=session)).deleted_count)
 
-    async def audit(self, user: dict, action: str, ident: ObjectId) -> None:
+    async def audit(self, user: dict, action: str, ident: ObjectId, session: AsyncClientSession) -> None:
         """Record a successful mutation without sensitive data."""
         now = datetime.now(timezone.utc)
-        await self.db.audit_logs.insert_one({"timestamp": now, "createdAt": now, "updatedAt": now, "userId": user["_id"], "userName": user["name"], "action": action, "entityType": "application", "entityId": str(ident), "details": f"Application {action}"})
+        await self.db.audit_logs.insert_one({"timestamp": now, "createdAt": now, "updatedAt": now, "userId": user["_id"], "userName": user["name"], "action": action, "entityType": "application", "entityId": str(ident), "details": f"Application {action}"}, session=session)

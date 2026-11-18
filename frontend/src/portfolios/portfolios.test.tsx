@@ -12,13 +12,19 @@ describe('portfolio inventory', () => {
   beforeEach(() => { localStorage.setItem('ketsip.token', 'token'); history.replaceState({}, '', '/portfolios'); });
   afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); localStorage.clear(); });
   it('renders scoped results and sends filters to the API', async () => {
-    const fetcher = vi.fn().mockImplementation(async (url: string) => url.endsWith('/auth/me') ? reply(user) : reply({ items: [portfolio], total: 1, canCreate: false }));
+    const archived = { ...portfolio, id: 'q', name: 'Legacy', status: 'Archived' };
+    const fetcher = vi.fn().mockImplementation(async (url: string) => url.endsWith('/auth/me') ? reply(user) : reply(url.includes('status=Archived') ? { items: [archived], total: 1, canCreate: false } : { items: [portfolio, archived], total: 2, canCreate: false }));
     vi.stubGlobal('fetch', fetcher);
     render(<App />);
     expect(await screen.findByRole('link', { name: 'Payments' })).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Legacy' })).toBeVisible();
+    expect(screen.getByText('2 portfolios')).toBeVisible();
     expect(screen.queryByRole('link', { name: 'Create portfolio' })).toBeNull();
     await userEvent.selectOptions(screen.getByLabelText('Status'), 'Archived');
     expect(fetcher.mock.calls.some(call => String(call[0]).includes('status=Archived'))).toBe(true);
+    expect(await screen.findByText('1 portfolios')).toBeVisible();
+    expect(screen.getByRole('link', { name: 'Legacy' })).toBeVisible();
+    expect(screen.queryByRole('link', { name: 'Payments' })).toBeNull();
   });
   it('shows detail, linked applications and permitted edit but no delete', async () => {
     history.replaceState({}, '', '/portfolios/p');
@@ -30,11 +36,15 @@ describe('portfolio inventory', () => {
   });
   it('saves edits and displays the server response', async () => {
     history.replaceState({}, '', '/portfolios/p/edit');
+    let savedPortfolio = { ...portfolio };
     const fetcher = vi.fn().mockImplementation(async (url: string, options?: RequestInit) => {
       if (url.endsWith('/auth/me')) return reply(user);
-      if (options?.method === 'PUT') return reply({ ...portfolio, description: 'Updated' });
+      if (options?.method === 'PUT') {
+        savedPortfolio = { ...savedPortfolio, ...JSON.parse(String(options.body)) };
+        return reply(savedPortfolio);
+      }
       if (url.includes('/applications?')) return reply({ items: [], total: 0 });
-      return reply({ ...portfolio, description: options?.method === 'PUT' ? 'Updated' : 'Payments work' });
+      return reply(savedPortfolio);
     });
     vi.stubGlobal('fetch', fetcher);
     render(<App />);
@@ -44,6 +54,7 @@ describe('portfolio inventory', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Save portfolio' }));
     expect(fetcher.mock.calls.some(call => call[1]?.method === 'PUT' && JSON.parse(String(call[1]?.body)).description === 'Updated')).toBe(true);
     expect(await screen.findByRole('heading', { name: 'Payments' })).toBeVisible();
+    expect(await screen.findByText('Updated')).toBeVisible();
   });
   it('reports request errors and prevents an unpermitted form', async () => {
     history.replaceState({}, '', '/portfolios/p/edit');

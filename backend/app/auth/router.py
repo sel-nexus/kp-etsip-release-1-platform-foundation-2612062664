@@ -6,10 +6,9 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError
 from pymongo.asynchronous.database import AsyncDatabase
 from app.audit.repository import AuditRepository
-from app.audit.service import record_event
 from app.auth.repository import UserRepository
 from app.auth.schemas import LandingChange, LoginRequest, LoginResponse, PasswordChange, PublicUser
-from app.auth.service import change_landing, change_password, login, public_user
+from app.auth.service import change_landing, change_password, login, logout as logout_service, public_user
 from app.core.database import get_db
 from app.core.security import decode_token
 
@@ -66,5 +65,4 @@ async def landing(body: LandingChange, db: Annotated[AsyncDatabase, Depends(get_
 @router.post("/logout", status_code=204)
 async def logout(db: Annotated[AsyncDatabase, Depends(get_db)], user: Annotated[dict, Depends(current_user)]) -> None:
     """Invalidate the user's tokens and record sign-out."""
-    await UserRepository(db).update(user["_id"], {}, increment_version=True)
-    await record_event(AuditRepository(db), user, user["email"], "edit", "Signed out")
+    await logout_service(UserRepository(db), AuditRepository(db), user)

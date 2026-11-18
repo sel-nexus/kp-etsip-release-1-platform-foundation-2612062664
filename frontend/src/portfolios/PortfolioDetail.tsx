@@ -37,11 +37,59 @@ export default function PortfolioDetail() {
         <p className="eyebrow">PORTFOLIO</p>
         <h1>{portfolio.name}</h1>
         <p>{portfolio.description || 'No description provided.'}</p>
-        <dl className="portfolio-summary"><div><dt>Owner</dt><dd>{portfolio.owner || '—'}</dd></div><div><dt>Product area</dt><dd>{portfolio.productArea || '—'}</dd></div><div><dt>Status</dt><dd>{portfolio.status}</dd></div><div><dt>Applications</dt><dd>{portfolio.applicationCount}</dd></div><div><dt>Quality score</dt><dd>{portfolio.qualityScore ?? 'No data'}</dd></div></dl>
-        <div className="portfolio-actions">{portfolio.canEdit && <Link to={`/portfolios/${portfolio.id}/edit`}>Edit portfolio</Link>}{portfolio.canDelete && <button disabled={deleting} onClick={() => void remove()}>Delete portfolio</button>}</div>
+        <dl className="portfolio-summary">
+          <div>
+            <dt>Owner</dt>
+            <dd>{portfolio.owner || '—'}</dd>
+          </div>
+          <div>
+            <dt>Product area</dt>
+            <dd>{portfolio.productArea || '—'}</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>{portfolio.status}</dd>
+          </div>
+          <div>
+            <dt>Applications</dt>
+            <dd>{portfolio.applicationCount}</dd>
+          </div>
+          <div>
+            <dt>Quality score</dt>
+            <dd>{portfolio.qualityScore ?? 'No data'}</dd>
+          </div>
+        </dl>
+        <div className="portfolio-actions">
+          {portfolio.canEdit && <Link to={`/portfolios/${portfolio.id}/edit`}>Edit portfolio</Link>}
+          {portfolio.canDelete && <button disabled={deleting} onClick={() => void remove()}>Delete portfolio</button>}
+        </div>
         <h2>Applications</h2>
-        {applications && (applications.items.length ? <div className="table-wrap"><table><thead><tr><th scope="col">Name</th><th scope="col">Product Area</th><th scope="col">Quality Score</th><th scope="col">Risk</th></tr></thead><tbody>{applications.items.map(app => <tr key={app.id}><td><Link to={`/applications/${app.id}`}>{app.name}</Link></td><td>{app.productArea || '—'}</td><td>{app.qualityScore ?? 'No data'}</td><td>{app.riskLevel || '—'}</td></tr>)}</tbody></table></div> : <p>No linked applications.</p>)}
-        {applications && <div className="pagination"><button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button><button disabled={offset + 25 >= applications.total} onClick={() => setOffset(offset + 25)}>Next</button></div>}
+        {applications && (applications.items.length ? <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Product Area</th>
+                <th scope="col">Quality Score</th>
+                <th scope="col">Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              {applications.items.map(app => <tr key={app.id}>
+                <td>
+                  <Link to={`/applications/${app.id}`}>{app.name}</Link>
+                </td>
+                <td>{app.productArea || '—'}</td>
+                <td>{app.qualityScore ?? 'No data'}</td>
+                <td>{app.riskLevel || '—'}</td>
+              </tr>)}
+            </tbody>
+          </table>
+        </div> : <p>No linked applications.</p>)}
+        {applications && <div className="pagination">
+          <button disabled={offset === 0} onClick={() => setOffset(Math.max(0, offset - 25))}>Previous</button>
+          <button disabled={offset + 25 >= applications.total} onClick={() => setOffset(offset + 25)}>Next</button>
+        </div>}
       </>}
     </main>
   );
