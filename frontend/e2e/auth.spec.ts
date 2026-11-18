@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('first sign-in, password change, preference persistence and sign-out', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+  const initial = process.env.E2E_ADMIN_PASSWORD;
+  if (!initial) throw new Error('Set E2E_ADMIN_PASSWORD to the seeded admin password on a fresh disposable database');
+  const replacement = `Changed-${Date.now()}-Secure!`;
+  await page.goto('/login');
+  await page.getByLabel('Email').fill('admin@ketsip.local');
+  await page.getByLabel('Password', { exact: true }).fill(initial);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await expect(page.getByText('Change your initial password before continuing.')).toBeVisible();
+  await expect(page.getByText('admin@ketsip.local')).toBeVisible();
+  await page.getByLabel('Current password').fill(initial);
+  await page.getByLabel('New password').fill(replacement);
+  await page.getByRole('button', { name: 'Change password' }).click();
+  await expect(page.getByRole('heading', { name: 'Executive Dashboard' })).toBeVisible();
+  await page.getByRole('link', { name: 'My profile' }).click();
+  await page.getByLabel('Open after sign in').selectOption('applications');
+  await page.getByRole('button', { name: 'Save preference' }).click();
+  await expect(page.getByText('Landing preference saved.')).toBeVisible();
+  await page.getByRole('button', { name: 'Sign out' }).click();
+  await expect(page.getByRole('heading', { name: 'Sign in' })).toBeVisible();
+  await page.getByLabel('Email').fill('admin@ketsip.local');
+  await page.getByLabel('Password', { exact: true }).fill(replacement);
+  await page.getByRole('button', { name: 'Sign in' }).click();
+  await expect(page.getByRole('heading', { name: 'Application Repository' })).toBeVisible();
+  expect(errors).toEqual([]);
+});
