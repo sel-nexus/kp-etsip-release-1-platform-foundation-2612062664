@@ -1,6 +1,6 @@
-# KP ETSIP — authentication slice
+# KP ETSIP — platform foundation
 
-This first slice provides local sign-in, a forced administrator password change, profile and landing preferences. Dashboard and application destinations are named but their functionality is not implemented. Subsequent slices provide inventory, administration and reports. MongoDB is required; there is no in-memory fallback.
+The current slices provide local sign-in, profile preferences and portfolio management. Dashboard and application-detail functionality is not implemented yet. MongoDB is required; there is no in-memory fallback.
 
 ## Local development
 
@@ -15,8 +15,12 @@ For production, use HTTPS, a protected MongoDB instance, a randomly generated un
 
 `POST /api/auth/login` accepts `{email,password}` and returns `{token,user}`. `GET /api/auth/me` requires a bearer token and returns public profile only. `POST /api/auth/password` accepts `{currentPassword,newPassword}` and returns a replacement token and user. Passwords must be 12–72 UTF-8 bytes; the current password must differ. `PUT /api/auth/landing` accepts `{defaultLandingPage: "dashboard" | "applications"}`. `POST /api/auth/logout` invalidates sessions. Before an administrator changes its initial password only profile, password change and logout are available. Each request verifies the current user is active. Login attempts and successful profile changes are audited; no credentials are written to audit records. Future protected business routes must depend on `unrestricted_user` to enforce the initial-password gate; `/me`, password change, logout and health are intentionally exempt.
 
+## Portfolios
+
+`GET /api/portfolios` accepts `search`, `status`, `productArea`, `limit` (1–100) and `offset`; it returns `{items,total,canCreate}`. Product-area filtering selects portfolios containing an application in that area. `POST /api/portfolios`, `GET`/`PUT`/`DELETE /api/portfolios/{id}` and `GET /api/portfolios/{id}/applications` use bearer authentication. Names are unique; linked applications block deletion. Counts and rounded quality averages are calculated from applications, with null for no score. Administrators alone create or delete portfolios, and leaders may edit assigned portfolios; current role permissions must also grant the operation. Leaders, engineers and read-only users see only assignments. The seed inserts three portfolios and ten illustrative applications, and assigns the first portfolio to newly seeded scoped demo users without overwriting existing accounts. Application links anticipate the later application-detail slice.
+
 ## Tests
 
-With the backend dependencies installed and MongoDB running: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_auth.py`. Tests create and drop a uniquely named disposable database. Frontend component tests: `cd frontend && npm test`; typecheck and build: `cd frontend && npm run build`.
+With the backend dependencies installed and MongoDB running: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_auth.py`. Tests create and drop a uniquely named disposable database. Portfolio API tests: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_portfolios.py`. Frontend component tests: `cd frontend && npm test`; typecheck and build: `cd frontend && npm run build`.
 
-For E2E, run backend and frontend against a **fresh disposable** Mongo database with seeding enabled. From `frontend`, set `E2E_ADMIN_PASSWORD` to its initial administrator password, then run `node node_modules/@playwright/test/cli.js test`. The journey changes the seeded password and landing preference and therefore must not be run against valuable data. Install Playwright Chromium first if needed: `node node_modules/@playwright/test/cli.js install chromium`.
+For E2E, run backend and frontend against a **fresh disposable** Mongo database with seeding enabled. From `frontend`, set `E2E_ADMIN_PASSWORD` to its initial administrator password, then run `node node_modules/@playwright/test/cli.js test`. The journeys change the seeded password, landing preference and portfolio description and therefore must not be run against valuable data. Set `E2E_DEMO_PASSWORD` if the seeded demo password differs from the development default. Install Playwright Chromium first if needed: `node node_modules/@playwright/test/cli.js install chromium`.

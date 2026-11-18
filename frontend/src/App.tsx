@@ -2,6 +2,9 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react
 import { AuthProvider, useAuth } from './auth/AuthContext';
 import LoginPage from './auth/LoginPage';
 import ProfilePage from './auth/ProfilePage';
+import PortfolioList from './portfolios/PortfolioList';
+import PortfolioDetail from './portfolios/PortfolioDetail';
+import PortfolioForm from './portfolios/PortfolioForm';
 
 /** Restrict routes to a live session and the initial password change. */
 function Protected() {
@@ -15,12 +18,17 @@ function Protected() {
       <header className="header">
         <Link className="brand" to={user.mustChangePassword ? '/profile' : `/${user.defaultLandingPage}`}>KP ETSIP <span>Platform Foundation</span></Link>
         <nav aria-label="Account">
+          {!user.mustChangePassword && <Link to="/portfolios">Portfolios</Link>}
           <Link to="/profile">My profile</Link>
           <button className="text-button" onClick={() => { void signOut().catch(() => { console.error('Sign-out could not be confirmed by the server'); }); }}>Sign out</button>
         </nav>
       </header>
       <Routes>
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/portfolios" element={<PortfolioList />} />
+        <Route path="/portfolios/new" element={<PortfolioForm />} />
+        <Route path="/portfolios/:id" element={<PortfolioDetail />} />
+        <Route path="/portfolios/:id/edit" element={<PortfolioForm />} />
         <Route path="/dashboard" element={<Destination title="Executive Dashboard" />} />
         <Route path="/applications" element={<Destination title="Application Repository" />} />
         <Route path="*" element={<Navigate to={`/${user.defaultLandingPage}`} replace />} />

@@ -6,6 +6,7 @@ from dotenv import dotenv_values
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.auth.router import router
+from app.portfolios.router import router as portfolio_router
 from app.core.config import Settings
 from app.core.database import create_client
 from app.core.seed import seed_database
@@ -24,6 +25,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             await client.admin.command("ping")
             await application.state.db.users.create_index("email", unique=True)
             await application.state.db.roles.create_index("name", unique=True)
+            await application.state.db.portfolios.create_index("name", unique=True)
+            await application.state.db.applications.create_index("portfolioId")
             if config.seed_on_startup:
                 await seed_database(application.state.db, config)
             yield
@@ -35,6 +38,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     origins = origins_text.split(",")
     application.add_middleware(CORSMiddleware, allow_origins=[origin.strip() for origin in origins], allow_methods=["*"], allow_headers=["*"], allow_credentials=True)
     application.include_router(router)
+    application.include_router(portfolio_router)
 
     @application.get("/api/health", tags=["Health"])
     async def health() -> dict[str, str]:
