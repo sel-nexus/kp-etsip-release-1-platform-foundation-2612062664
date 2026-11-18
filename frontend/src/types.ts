@@ -23,5 +23,19 @@ export interface PortfolioPage { items: Portfolio[]; total: number; canCreate: b
 export interface ApplicationSummary { id: string; name: string; productArea: string; qualityScore: number | null; riskLevel: string }
 export interface ApplicationPage { items: ApplicationSummary[]; total: number }
 
+/** Editable application fields matching the inventory API. */
+export interface ApplicationInput {
+  name: string; description: string; portfolioId: string; productArea: string;
+  businessOwner: string; technologyOwner: string; etsOwner: string;
+  criticality: 'Low' | 'Medium' | 'High' | 'Critical'; tier: number;
+  lifecycleStatus: 'Active' | 'Deprecated' | 'Retired'; technologyStack: string;
+  repositoryLink: string | null; pipelineLink: string | null;
+  applicationHealthScore: number; qualityScore: number; automationCoverage: number;
+  unitTestCoverage: number; openDefects: number; openCriticalDefects: number;
+  riskLevel: 'Low' | 'Medium' | 'High';
+}
+export interface Application extends ApplicationInput { id: string; portfolioName: string; canEdit: boolean; canDelete: boolean }
+export interface ApplicationInventoryPage { items: Application[]; total: number; canCreate: boolean }
+
 /** Signed session and its profile. */
 export interface Session { token: string; user: User }

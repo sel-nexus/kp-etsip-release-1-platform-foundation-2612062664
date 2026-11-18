@@ -1,0 +1,1 @@
+"""Provide application inventory functionality."""

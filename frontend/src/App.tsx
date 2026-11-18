@@ -5,6 +5,9 @@ import ProfilePage from './auth/ProfilePage';
 import PortfolioList from './portfolios/PortfolioList';
 import PortfolioDetail from './portfolios/PortfolioDetail';
 import PortfolioForm from './portfolios/PortfolioForm';
+import ApplicationList from './applications/ApplicationList';
+import ApplicationDetail from './applications/ApplicationDetail';
+import ApplicationForm from './applications/ApplicationForm';
 
 /** Restrict routes to a live session and the initial password change. */
 function Protected() {
@@ -19,6 +22,7 @@ function Protected() {
         <Link className="brand" to={user.mustChangePassword ? '/profile' : `/${user.defaultLandingPage}`}>KP ETSIP <span>Platform Foundation</span></Link>
         <nav aria-label="Account">
           {!user.mustChangePassword && <Link to="/portfolios">Portfolios</Link>}
+          {!user.mustChangePassword && <Link to="/applications">Applications</Link>}
           <Link to="/profile">My profile</Link>
           <button className="text-button" onClick={() => { void signOut().catch(() => { console.error('Sign-out could not be confirmed by the server'); }); }}>Sign out</button>
         </nav>
@@ -30,7 +34,10 @@ function Protected() {
         <Route path="/portfolios/:id" element={<PortfolioDetail />} />
         <Route path="/portfolios/:id/edit" element={<PortfolioForm />} />
         <Route path="/dashboard" element={<Destination title="Executive Dashboard" />} />
-        <Route path="/applications" element={<Destination title="Application Repository" />} />
+        <Route path="/applications" element={<ApplicationList />} />
+        <Route path="/applications/new" element={<ApplicationForm />} />
+        <Route path="/applications/:id" element={<ApplicationDetail />} />
+        <Route path="/applications/:id/edit" element={<ApplicationForm />} />
         <Route path="*" element={<Navigate to={`/${user.defaultLandingPage}`} replace />} />
       </Routes>
     </>
