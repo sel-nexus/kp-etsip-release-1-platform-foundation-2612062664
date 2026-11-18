@@ -1,6 +1,6 @@
 # KP ETSIP — platform foundation
 
-The current slices provide local sign-in, profile preferences and portfolio management. Dashboard and application-detail functionality is not implemented yet. MongoDB is required; there is no in-memory fallback.
+The current slices provide local sign-in, profile preferences, portfolio and application inventory, and executive insight. MongoDB is required; there is no in-memory fallback.
 
 ## Local development
 
@@ -17,10 +17,14 @@ For production, use HTTPS, a protected MongoDB instance, a randomly generated un
 
 ## Portfolios
 
-`GET /api/portfolios` accepts `search`, `status`, `productArea`, `limit` (1–100) and `offset`; it returns `{items,total,canCreate}`. Product-area filtering selects portfolios containing an application in that area. `POST /api/portfolios`, `GET`/`PUT`/`DELETE /api/portfolios/{id}` and `GET /api/portfolios/{id}/applications` use bearer authentication. Names are unique; linked applications block deletion. Counts and rounded quality averages are calculated from applications, with null for no score. Administrators alone create or delete portfolios, and leaders may edit assigned portfolios; current role permissions must also grant the operation. Leaders, engineers and read-only users see only assignments. The seed inserts three portfolios and ten illustrative applications, and assigns the first portfolio to newly seeded scoped demo users without overwriting existing accounts. Application links anticipate the later application-detail slice.
+`GET /api/portfolios` accepts `search`, `status`, `productArea`, `limit` (1–100) and `offset`; it returns `{items,total,canCreate}`. Product-area filtering selects portfolios containing an application in that area. `POST /api/portfolios`, `GET`/`PUT`/`DELETE /api/portfolios/{id}` and `GET /api/portfolios/{id}/applications` use bearer authentication. Names are unique; linked applications block deletion. Counts and rounded quality averages are calculated from applications, with null for no score. Administrators alone create or delete portfolios, and leaders may edit assigned portfolios; current role permissions must also grant the operation. Leaders, engineers and read-only users see only assignments. The seed inserts three portfolios and ten illustrative applications, and assigns the first portfolio to newly seeded scoped demo users without overwriting existing accounts. Application links navigate to application details.
+
+## Executive dashboard
+
+`GET /api/dashboard/executive` requires the current role's `view` permission and applies portfolio scope. Optional `portfolioId`, `productArea`, and `riskLevel` filter the applications; `limit` (1–100, default 25) and `offset` paginate only the portfolio breakdown, while scalar totals cover all matches. Without application filters, visible empty portfolios count; with product-area or risk filters, only portfolios containing matches count. Averages are rounded to the nearest integer and return null when no scores exist. The dashboard accepts a portfolio ID (available in portfolio URLs), product area, and risk level as filters.
 
 ## Tests
 
-With the backend dependencies installed and MongoDB running: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_auth.py`. Tests create and drop a uniquely named disposable database. Portfolio API tests: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_portfolios.py`. Frontend component tests: `cd frontend && npm test`; typecheck and build: `cd frontend && npm run build`.
+With the backend dependencies installed and MongoDB running: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_auth.py`. Tests create and drop a uniquely named disposable database. Portfolio API tests: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_portfolios.py`. Dashboard API tests: `cd backend && PYTHONPATH=. "$HOME/venvs/app/bin/python" -m pytest -q tests/test_dashboard.py`. Frontend component tests: `cd frontend && npm test`; typecheck and build: `cd frontend && npm run build`.
 
 For E2E, run backend and frontend against a **fresh disposable** Mongo database with seeding enabled. From `frontend`, set `E2E_ADMIN_PASSWORD` to its initial administrator password, then run `node node_modules/@playwright/test/cli.js test`. The journeys change the seeded password, landing preference and portfolio description and therefore must not be run against valuable data. Set `E2E_DEMO_PASSWORD` if the seeded demo password differs from the development default. Install Playwright Chromium first if needed: `node node_modules/@playwright/test/cli.js install chromium`.

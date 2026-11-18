@@ -1,0 +1,1 @@
+"""Provide executive dashboard functionality."""

@@ -37,5 +37,12 @@ export interface ApplicationInput {
 export interface Application extends ApplicationInput { id: string; portfolioName: string; canEdit: boolean; canDelete: boolean }
 export interface ApplicationInventoryPage { items: Application[]; total: number; canCreate: boolean }
 
+/** Complete dashboard totals and a bounded portfolio breakdown. */
+export interface Dashboard {
+  enterpriseQualityScore: number | null; applicationHealthScore: number | null; automationMaturityScore: number | null;
+  openCriticalDefects: number; applicationsAtRisk: number; totalApplications: number; totalPortfolios: number;
+  portfolios: { items: { id: string; name: string; applicationCount: number; qualityScore: number | null; applicationsAtRisk: number }[]; total: number };
+}
+
 /** Signed session and its profile. */
 export interface Session { token: string; user: User }
