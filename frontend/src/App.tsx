@@ -9,6 +9,8 @@ import ApplicationList from './applications/ApplicationList';
 import ApplicationDetail from './applications/ApplicationDetail';
 import ApplicationForm from './applications/ApplicationForm';
 import DashboardPage from './dashboard/DashboardPage';
+import AdminPage from './admin/AdminPage';
+import AuditPage from './admin/AuditPage';
 
 /** Restrict routes to a live session and the initial password change. */
 function Protected() {
@@ -25,12 +27,16 @@ function Protected() {
           {!user.mustChangePassword && <Link to="/dashboard">Dashboard</Link>}
           {!user.mustChangePassword && <Link to="/portfolios">Portfolios</Link>}
           {!user.mustChangePassword && <Link to="/applications">Applications</Link>}
+          {!user.mustChangePassword && user.role === 'Administrator' && <Link to="/admin">Administration</Link>}
+          {!user.mustChangePassword && ['Administrator', 'Auditor'].includes(user.role) && <Link to="/audit">Audit log</Link>}
           <Link to="/profile">My profile</Link>
           <button className="text-button" onClick={() => { void signOut().catch(() => { console.error('Sign-out could not be confirmed by the server'); }); }}>Sign out</button>
         </nav>
       </header>
       <Routes>
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/audit" element={<AuditPage />} />
         <Route path="/portfolios" element={<PortfolioList />} />
         <Route path="/portfolios/new" element={<PortfolioForm />} />
         <Route path="/portfolios/:id" element={<PortfolioDetail />} />
